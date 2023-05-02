@@ -1,2 +1,2 @@
-# digitalct.github.io
-Chengappa Thumisi Personal website
+# Chengappa Thumisi
+Indian Institute of Technology Hyderabad
