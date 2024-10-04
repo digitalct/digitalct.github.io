@@ -2,39 +2,93 @@
 
 <head>
 <base target="main">
+<script language="JavaScript">
+<!--
+function FP_preloadImgs() {//v1.0
+ var d=document,a=arguments; if(!d.FP_imgs) d.FP_imgs=new Array();
+ for(var i=0; i<a.length; i++) { d.FP_imgs[i]=new Image; d.FP_imgs[i].src=a[i]; }
+}
+
+function FP_swapImg() {//v1.0
+ var doc=document,args=arguments,elm,n; doc.$imgSwaps=new Array(); for(n=2; n<args.length;
+ n+=2) { elm=FP_getObjectByID(args[n]); if(elm) { doc.$imgSwaps[doc.$imgSwaps.length]=elm;
+ elm.$src=elm.src; elm.src=args[n+1]; } }
+}
+
+function FP_getObjectByID(id,o) {//v1.0
+ var c,el,els,f,m,n; if(!o)o=document; if(o.getElementById) el=o.getElementById(id);
+ else if(o.layers) c=o.layers; else if(o.all) el=o.all[id]; if(el) return el;
+ if(o.id==id || o.name==id) return o; if(o.childNodes) c=o.childNodes; if(c)
+ for(n=0; n<c.length; n++) { el=FP_getObjectByID(id,c[n]); if(el) return el; }
+ f=o.forms; if(f) for(n=0; n<f.length; n++) { els=f[n].elements;
+ for(m=0; m<els.length; m++){ el=FP_getObjectByID(id,els[n]); if(el) return el; } }
+ return null;
+}
+// -->
+</script>
 </head>
 
-<body>
-<body style="background-color:white;">
-<h1>
-<font size="3"> </font></h1>
-	<table class="center">
-<table border="1" width="31%" bordercolor="#FFFFFF">
-	
+<body onload="FP_preloadImgs(/*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button5.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button6.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/buttonB.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/buttonC.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button11.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button12.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button14.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button15.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button17.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button18.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button1A.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button1B.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button1D.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button1E.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button20.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button21.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button23.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button24.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button26.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button27.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button29.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button2A.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button2C.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button2D.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button2F.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button30.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button32.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button33.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button35.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button36.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button38.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button39.jpg')">
+<body style="background-color:white;" onload="FP_preloadImgs(/*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button5.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button6.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/buttonB.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/buttonC.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button11.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button12.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button14.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button15.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button17.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button18.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button1A.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button1B.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button1D.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button1E.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button20.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button21.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button23.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button24.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button26.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button27.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button29.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button2A.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button2C.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button2D.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button2F.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button30.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button32.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button33.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button35.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button36.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button38.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button39.jpg')">
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
 	<tr>
-		<td>
+		<td width="150">
+		<img border="0" id="img1" src="button4.jpg" height="60" width="300" alt="Smart Housing Solutions" fp-style="fp-btn: Braided Row 1" fp-title="Smart Housing Solutions" onmouseover="FP_swapImg(1,0,/*id*/'img1',/*url*/'button5.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img1',/*url*/'button4.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img1',/*url*/'button6.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img1',/*url*/'button5.jpg')"></td>
+		<td rowspan="8" width="647">
 		<p align="center">
-		<img border="0" src="images/Screenshot 2024-09-17 233936.png" width="600" height="500"></td>
+		<img border="0" id="img19" src="button1F.jpg" height="60" width="300" alt="CT Qube Technologies" onmouseover="FP_swapImg(1,0,/*id*/'img19',/*url*/'button20.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img19',/*url*/'button1F.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img19',/*url*/'button21.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img19',/*url*/'button20.jpg')" fp-style="fp-btn: Embossed Capsule 1; fp-font: Times New Roman; fp-font-style: Bold; fp-font-size: 20" fp-title="CT Qube Technologies"></p>
+		<p>&nbsp;</p>
+		<p align="center">E-mail:
+		<a href="mailto:ctqubetechnologies@gmail.com">ctqubetechnologies@gmail.com</a></p>
+		<p align="center">&nbsp;</td>
+		<td>
+		<img border="0" id="img20" src="button22.jpg" height="60" width="300" alt="Technological Update to the Industries" onmouseover="FP_swapImg(1,0,/*id*/'img20',/*url*/'button23.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img20',/*url*/'button22.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img20',/*url*/'button24.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img20',/*url*/'button23.jpg')" fp-style="fp-btn: Braided Row 1" fp-title="Technological Update to the Industries"></td>
 	</tr>
 	<tr>
-		<td align="center">
-		<p align="center"><font color="#800000"><b>CT Qube Technologies</b></font></td>
-			</tr>
-	<tr>
-		<td align="center">E-mail:
-		<a href="mailto:ctqubetechnologies@gmail.com">ctqubetechnologies@gmail.com</a></td>
+		<td width="150">
+		<img border="0" id="img2" src="buttonA.jpg" height="60" width="300" alt="Material Fabrication and Characterization" onmouseover="FP_swapImg(1,0,/*id*/'img2',/*url*/'buttonB.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img2',/*url*/'buttonA.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img2',/*url*/'buttonC.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img2',/*url*/'buttonB.jpg')" fp-style="fp-btn: Braided Row 1" fp-title="Material Fabrication and Characterization"></td>
+		<td>
+		<img border="0" id="img21" src="button25.jpg" height="60" width="300" alt="Digital marketing" onmouseover="FP_swapImg(1,0,/*id*/'img21',/*url*/'button26.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img21',/*url*/'button25.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img21',/*url*/'button27.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img21',/*url*/'button26.jpg')" fp-style="fp-btn: Braided Row 1" fp-title="Digital marketing"></td>
 	</tr>
 	<tr>
-		<td align="center"></td>
+		<td width="150">
+		<img border="0" id="img3" src="button10.jpg" height="60" width="300" alt="Smart Farming and Diary Products" onmouseover="FP_swapImg(1,0,/*id*/'img3',/*url*/'button11.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img3',/*url*/'button10.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img3',/*url*/'button12.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img3',/*url*/'button11.jpg')" fp-style="fp-btn: Braided Row 1" fp-title="Smart Farming and Diary Products"></td>
+		<td>
+		<img border="0" id="img22" src="button28.jpg" height="60" width="300" alt="Wellness and Fitness" onmouseover="FP_swapImg(1,0,/*id*/'img22',/*url*/'button29.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img22',/*url*/'button28.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img22',/*url*/'button2A.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img22',/*url*/'button29.jpg')" fp-style="fp-btn: Braided Row 1" fp-title="Wellness and Fitness"></td>
 	</tr>
 	<tr>
-		<td align="center"></td>
+		<td width="150">
+		<img border="0" id="img4" src="button10.jpg" height="60" width="300" alt="Smart Farming and Diary Products" onmouseover="FP_swapImg(1,0,/*id*/'img4',/*url*/'button11.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img4',/*url*/'button10.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img4',/*url*/'button12.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img4',/*url*/'button11.jpg')" fp-style="fp-btn: Braided Row 1; fp-orig: 0" fp-title="Smart Farming and Diary Products"></td>
+		<td>
+		<img border="0" id="img23" src="button2B.jpg" height="60" width="300" alt="Retail marketing" onmouseover="FP_swapImg(1,0,/*id*/'img23',/*url*/'button2C.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img23',/*url*/'button2B.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img23',/*url*/'button2D.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img23',/*url*/'button2C.jpg')" fp-style="fp-btn: Braided Row 1" fp-title="Retail marketing"></td>
 	</tr>
 	<tr>
-		<td align="center"></td>
+		<td width="150">
+		<img border="0" id="img5" src="button13.jpg" height="60" width="300" alt="Digital Consultancy" onmouseover="FP_swapImg(1,0,/*id*/'img5',/*url*/'button14.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img5',/*url*/'button13.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img5',/*url*/'button15.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img5',/*url*/'button14.jpg')" fp-style="fp-btn: Braided Row 1" fp-title="Digital Consultancy"></td>
+		<td>
+		<img border="0" id="img24" src="button2E.jpg" height="60" width="300" alt="Fashion Designing" onmouseover="FP_swapImg(1,0,/*id*/'img24',/*url*/'button2F.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img24',/*url*/'button2E.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img24',/*url*/'button30.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img24',/*url*/'button2F.jpg')" fp-style="fp-btn: Braided Row 1" fp-title="Fashion Designing"></td>
 	</tr>
-	
+	<tr>
+		<td width="150">
+		<img border="0" id="img6" src="button16.jpg" height="60" width="300" alt="Automation and Maintenance" onmouseover="FP_swapImg(1,0,/*id*/'img6',/*url*/'button17.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img6',/*url*/'button16.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img6',/*url*/'button18.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img6',/*url*/'button17.jpg')" fp-style="fp-btn: Braided Row 1" fp-title="Automation and Maintenance"></td>
+		<td>
+		<img border="0" id="img25" src="button31.jpg" height="60" width="300" alt="Hotel Management" onmouseover="FP_swapImg(1,0,/*id*/'img25',/*url*/'button32.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img25',/*url*/'button31.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img25',/*url*/'button33.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img25',/*url*/'button32.jpg')" fp-style="fp-btn: Braided Row 1" fp-title="Hotel Management"></td>
+	</tr>
+	<tr>
+		<td width="150">
+		<img border="0" id="img9" src="button19.jpg" height="60" width="300" alt="Real Estate Consultency" onmouseover="FP_swapImg(1,0,/*id*/'img9',/*url*/'button1A.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img9',/*url*/'button19.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img9',/*url*/'button1B.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img9',/*url*/'button1A.jpg')" fp-style="fp-btn: Braided Row 1" fp-title="Real Estate Consultency"></td>
+		<td>
+		<img border="0" id="img26" src="button34.jpg" height="60" width="300" alt="Education and Employment" onmouseover="FP_swapImg(1,0,/*id*/'img26',/*url*/'button35.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img26',/*url*/'button34.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img26',/*url*/'button36.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img26',/*url*/'button35.jpg')" fp-style="fp-btn: Braided Row 1" fp-title="Education and Employment"></td>
+	</tr>
+	<tr>
+		<td width="150">
+		<img border="0" id="img10" src="button1C.jpg" height="60" width="300" alt="Import and Exports" onmouseover="FP_swapImg(1,0,/*id*/'img10',/*url*/'button1D.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img10',/*url*/'button1C.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img10',/*url*/'button1E.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img10',/*url*/'button1D.jpg')" fp-style="fp-btn: Braided Row 1" fp-title="Import and Exports"></td>
+		<td>
+		<img border="0" id="img27" src="button37.jpg" height="60" width="300" alt="VISA and Passport Services" onmouseover="FP_swapImg(1,0,/*id*/'img27',/*url*/'button38.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img27',/*url*/'button37.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img27',/*url*/'button39.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img27',/*url*/'button38.jpg')" fp-style="fp-btn: Braided Row 1" fp-title="VISA and Passport Services"></td>
+	</tr>
 </table>
+<p>&nbsp;</p>
 
-<body>
+
+<body onload="FP_preloadImgs(/*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button5.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button6.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/buttonB.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/buttonC.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button11.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button12.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button14.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button15.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button17.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button18.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button1A.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button1B.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button1D.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button1E.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button20.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button21.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button23.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button24.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button26.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button27.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button29.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button2A.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button2C.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button2D.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button2F.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button30.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button32.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button33.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button35.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button36.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button38.jpg', /*url*/'file:///C:/Users/Chengappa/AppData/Local/Microsoft/Windows/INetCache/FrontPageTempDir/button39.jpg')">
 </html>
