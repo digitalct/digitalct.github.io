@@ -3,391 +3,122 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Simple Biomarker Tracker</title>
+  <title>Comprehensive Biomarker Tracker</title>
   <style>
-    :root{--bg:#f7fafc;--card:#ffffff;--muted:#6b7280;--accent:#0f172a}
-    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--bg); color:var(--accent); margin:0; padding:24px}
-    .container{max-width:1100px;margin:0 auto}
-    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
-    h1{font-size:20px;margin:0}
-    .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.06);margin-bottom:14px}
-    form.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-    label{font-size:12px;color:var(--muted);display:block;margin-bottom:6px}
-    input[type="text"], input[type="number"], input[type="date"], select, textarea{width:100%;padding:8px;border:1px solid #e6e9ee;border-radius:8px;font-size:14px}
-    button{background:#1f6feb;color:white;border:0;padding:10px 12px;border-radius:8px;cursor:pointer}
-    .muted{color:var(--muted);font-size:13px}
+    body{font-family:Arial, sans-serif;background:#f9fafb;color:#111;margin:0;padding:20px}
+    h1{font-size:22px;color:#333}
+    .card{background:white;padding:16px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.05);margin-bottom:20px}
+    form{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    label{font-size:12px;color:#555;display:block;margin-bottom:4px}
+    input{width:100%;padding:8px;border:1px solid #ccc;border-radius:6px;font-size:14px}
+    button{background:#2563eb;color:white;border:none;padding:8px 10px;border-radius:6px;cursor:pointer}
     table{width:100%;border-collapse:collapse;margin-top:10px}
-    th,td{padding:8px;border-bottom:1px solid #eef2f7;text-align:left;font-size:13px}
-    th{font-size:12px;color:var(--muted)}
-    .controls{display:flex;gap:8px;align-items:center}
-    .small{padding:6px 8px;font-size:13px}
-    .chart-wrap{display:flex;gap:12px;flex-wrap:wrap}
-    .chart-card{flex:1 1 320px;min-width:320px;padding:10px}
-    @media (max-width:900px){form.grid{grid-template-columns:repeat(1,1fr)}}
+    th,td{padding:8px;border-bottom:1px solid #ddd;text-align:left;font-size:13px}
   </style>
-  <!-- Chart.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Simple Biomarker Tracker</h1>
-      <div class="muted">Stores entries in your browser (localStorage). Export CSV / Print available.</div>
-    </header>
+  <h1>Comprehensive Biomarker Tracker</h1>
+  <div class="card">
+    <form id="entryForm" onsubmit="return addEntry();">
+      <div><label>Date</label><input id="date" type="date" required></div>
+      <div><label>Notes</label><input id="notes" type="text"></div>
 
-    <section class="card">
-      <strong>New entry</strong>
-      <p class="muted">Enter date and any biomarkers you want to record. Leave blank if not measured.</p>
-      <form id="entryForm" class="grid" onsubmit="return addEntry();">
-        <div>
-          <label for="date">Date</label>
-          <input id="date" type="date" required />
-        </div>
-        <div>
-          <label for="time">Time (optional)</label>
-          <input id="time" type="text" placeholder="e.g. 08:30" />
-        </div>
-        <div>
-          <label for="notes">Notes</label>
-          <input id="notes" type="text" placeholder="meds, fasting, symptoms..." />
-        </div>
+      <!-- Vital Signs -->
+      <div><label>Heart Rate (bpm)</label><input id="hr" type="number"></div>
+      <div><label>Blood Pressure (Systolic/Diastolic)</label><input id="bp" type="text"></div>
+      <div><label>Oxygen Saturation (%)</label><input id="spo2" type="number"></div>
 
-        <!-- Vital signs -->
-        <div>
-          <label>Heart rate (bpm)</label>
-          <input id="hr" type="number" step="1" />
-        </div>
-        <div>
-          <label>Blood pressure systolic (mmHg)</label>
-          <input id="bp_sys" type="number" step="1" />
-        </div>
-        <div>
-          <label>Blood pressure diastolic (mmHg)</label>
-          <input id="bp_dia" type="number" step="1" />
-        </div>
+      <!-- Basic Metabolic -->
+      <div><label>Glucose (mg/dL)</label><input id="glucose" type="number"></div>
+      <div><label>HbA1c (%)</label><input id="hba1c" type="number" step="0.1"></div>
+      <div><label>Creatinine (mg/dL)</label><input id="creatinine" type="number" step="0.1"></div>
 
-        <div>
-          <label>Respiratory rate (breaths/min)</label>
-          <input id="rr" type="number" step="1" />
-        </div>
-        <div>
-          <label>Temperature (°C)</label>
-          <input id="temp" type="number" step="0.1" />
-        </div>
-        <div>
-          <label>Oxygen saturation (SpO₂ %)</label>
-          <input id="spo2" type="number" step="0.1" />
-        </div>
+      <!-- Lipid Profile -->
+      <div><label>Total Cholesterol (mg/dL)</label><input id="chol" type="number"></div>
+      <div><label>LDL (mg/dL)</label><input id="ldl" type="number"></div>
+      <div><label>HDL (mg/dL)</label><input id="hdl" type="number"></div>
+      <div><label>Triglycerides (mg/dL)</label><input id="tg" type="number"></div>
+      <div><label>ApoA1 (mg/dL)</label><input id="apoa1" type="number"></div>
+      <div><label>ApoB (mg/dL)</label><input id="apob" type="number"></div>
+      <div><label>Lp(a) (mg/dL)</label><input id="lpa" type="number"></div>
 
-        <!-- Anthropometrics -->
-        <div>
-          <label>Weight (kg)</label>
-          <input id="weight" type="number" step="0.1" />
-        </div>
-        <div>
-          <label>Height (cm)</label>
-          <input id="height" type="number" step="0.1" />
-        </div>
-        <div>
-          <label>BMI (calculated)</label>
-          <input id="bmi" type="number" step="0.01" readonly />
-        </div>
+      <!-- Liver Function Tests -->
+      <div><label>ALT (U/L)</label><input id="alt" type="number"></div>
+      <div><label>AST (U/L)</label><input id="ast" type="number"></div>
+      <div><label>ALP (U/L)</label><input id="alp" type="number"></div>
+      <div><label>Bilirubin (mg/dL)</label><input id="bilirubin" type="number" step="0.1"></div>
 
-        <!-- Common blood tests -->
-        <div>
-          <label>Fasting glucose (mg/dL)</label>
-          <input id="glucose" type="number" step="0.1" />
-        </div>
-        <div>
-          <label>HbA1c (%)</label>
-          <input id="hba1c" type="number" step="0.01" />
-        </div>
-        <div>
-          <label>Total cholesterol (mg/dL)</label>
-          <input id="tch" type="number" step="0.1" />
-        </div>
+      <!-- Thyroid & Vitamins -->
+      <div><label>TSH (mIU/L)</label><input id="tsh" type="number"></div>
+      <div><label>Free T4 (ng/dL)</label><input id="ft4" type="number" step="0.01"></div>
+      <div><label>Vitamin D (ng/mL)</label><input id="vitd" type="number" step="0.1"></div>
+      <div><label>Vitamin B12 (pg/mL)</label><input id="b12" type="number"></div>
+      <div><label>Folate (ng/mL)</label><input id="folate" type="number"></div>
 
-        <div>
-          <label>LDL (mg/dL)</label>
-          <input id="ldl" type="number" step="0.1" />
-        </div>
-        <div>
-          <label>HDL (mg/dL)</label>
-          <input id="hdl" type="number" step="0.1" />
-        </div>
-        <div>
-          <label>Triglycerides (mg/dL)</label>
-          <input id="tg" type="number" step="0.1" />
-        </div>
+      <!-- Hormones -->
+      <div><label>Testosterone (ng/dL)</label><input id="testosterone" type="number"></div>
+      <div><label>Estrogen (pg/mL)</label><input id="estrogen" type="number"></div>
+      <div><label>Progesterone (ng/mL)</label><input id="progesterone" type="number" step="0.1"></div>
+      <div><label>Cortisol (µg/dL)</label><input id="cortisol" type="number" step="0.1"></div>
+      <div><label>DHEA-S (µg/dL)</label><input id="dheas" type="number"></div>
 
-        <!-- Basic metabolic panel -->
-        <div>
-          <label>Creatinine (mg/dL)</label>
-          <input id="creat" type="number" step="0.01" />
-        </div>
-        <div>
-          <label>BUN (mg/dL)</label>
-          <input id="bun" type="number" step="0.1" />
-        </div>
-        <div>
-          <label>eGFR (mL/min/1.73m²)</label>
-          <input id="egfr" type="number" step="0.1" />
-        </div>
+      <!-- Electrolytes and Minerals -->
+      <div><label>Calcium (mg/dL)</label><input id="calcium" type="number" step="0.1"></div>
+      <div><label>Magnesium (mg/dL)</label><input id="magnesium" type="number" step="0.1"></div>
+      <div><label>Phosphorus (mg/dL)</label><input id="phosphorus" type="number" step="0.1"></div>
+      <div><label>Iron (µg/dL)</label><input id="iron" type="number"></div>
+      <div><label>Ferritin (ng/mL)</label><input id="ferritin" type="number"></div>
+      <div><label>Transferrin Saturation (%)</label><input id="transferrin" type="number"></div>
 
-        <!-- Liver tests -->
-        <div>
-          <label>ALT (U/L)</label>
-          <input id="alt" type="number" step="0.1" />
-        </div>
-        <div>
-          <label>AST (U/L)</label>
-          <input id="ast" type="number" step="0.1" />
-        </div>
-        <div>
-          <label>ALP (U/L)</label>
-          <input id="alp" type="number" step="0.1" />
-        </div>
+      <!-- Inflammatory Markers -->
+      <div><label>C-Reactive Protein (CRP, mg/L)</label><input id="crp" type="number" step="0.01"></div>
+      <div><label>Erythrocyte Sedimentation Rate (ESR, mm/hr)</label><input id="esr" type="number"></div>
+      <div><label>Interleukin-6 (IL-6, pg/mL)</label><input id="il6" type="number" step="0.01"></div>
+      <div><label>Tumor Necrosis Factor-alpha (TNF-α, pg/mL)</label><input id="tnfa" type="number" step="0.01"></div>
+      <div><label>Homocysteine (µmol/L)</label><input id="homocysteine" type="number" step="0.1"></div>
 
-        <!-- Electrolytes & others -->
-        <div>
-          <label>Na (mmol/L)</label>
-          <input id="na" type="number" step="0.1" />
-        </div>
-        <div>
-          <label>K (mmol/L)</label>
-          <input id="k" type="number" step="0.01" />
-        </div>
-        <div>
-          <label>Cl (mmol/L)</label>
-          <input id="cl" type="number" step="0.1" />
-        </div>
+      <!-- Urine Analysis -->
+      <div><label>Urine pH</label><input id="urine_ph" type="number" step="0.1"></div>
+      <div><label>Specific Gravity</label><input id="urine_sg" type="number" step="0.001"></div>
+      <div><label>Protein (mg/dL)</label><input id="urine_protein" type="number"></div>
+      <div><label>Glucose (mg/dL)</label><input id="urine_glucose" type="number"></div>
+      <div><label>Ketones (mg/dL)</label><input id="urine_ketones" type="number"></div>
+      <div><label>Microalbumin (mg/L)</label><input id="urine_microalbumin" type="number"></div>
 
-        <!-- CBC -->
-        <div>
-          <label>Hemoglobin (g/dL)</label>
-          <input id="hb" type="number" step="0.01" />
-        </div>
-        <div>
-          <label>WBC (10^3/µL)</label>
-          <input id="wbc" type="number" step="0.01" />
-        </div>
-        <div>
-          <label>Platelets (10^3/µL)</label>
-          <input id="plt" type="number" step="1" />
-        </div>
-
-        <!-- Thyroid & vitamins -->
-        <div>
-          <label>TSH (mIU/L)</label>
-          <input id="tsh" type="number" step="0.01" />
-        </div>
-        <div>
-          <label>Free T4 (ng/dL)</label>
-          <input id="ft4" type="number" step="0.01" />
-        </div>
-        <div>
-          <label>Vitamin D 25(OH) (ng/mL)</label>
-          <input id="vitd" type="number" step="0.1" />
-        </div>
-
-        <!-- Inflammatory & others -->
-        <div>
-          <label>CRP (mg/L)</label>
-          <input id="crp" type="number" step="0.01" />
-        </div>
-        <div>
-          <label>ESR (mm/hr)</label>
-          <input id="esr" type="number" step="1" />
-        </div>
-        <div>
-          <label>Vitamin B12 (pg/mL)</label>
-          <input id="b12" type="number" step="1" />
-        </div>
-
-        <div style="grid-column:1/-1;display:flex;gap:8px;justify-content:flex-end;margin-top:6px">
-          <button type="submit">Save entry</button>
-          <button type="button" class="small" onclick="clearForm();">Clear</button>
-          <button type="button" class="small" onclick="exportCSV();">Export CSV</button>
-          <button type="button" class="small" onclick="print();">Print</button>
-        </div>
-      </form>
-    </section>
-
-    <section class="card">
-      <strong>Saved entries</strong>
-      <div id="summary" class="muted" style="margin-top:6px">No entries yet.</div>
-
-      <div style="overflow:auto;margin-top:10px">
-        <table id="entriesTable">
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Key biomarkers</th>
-              <th>Notes</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
+      <div style="grid-column:1/-1;text-align:right;margin-top:10px">
+        <button type="submit">Save</button>
       </div>
-    </section>
+    </form>
+  </div>
 
-    <section class="card">
-      <strong>Charts</strong>
-      <p class="muted">Select a biomarker to view trend (last 50 points).</p>
-      <div style="display:flex;gap:8px;align-items:center;margin:8px 0">
-        <select id="chartSelect"></select>
-        <button class="small" onclick="renderChart();">Show</button>
-        <button class="small" onclick="clearData();">Clear all data</button>
-      </div>
-      <div class="chart-wrap">
-        <div class="chart-card card"><canvas id="trendChart" height="180"></canvas></div>
-      </div>
-    </section>
+  <div class="card">
+    <table id="dataTable">
+      <thead><tr><th>Date</th><th>Notes</th><th>Glucose</th><th>HbA1c</th><th>CRP</th><th>Vitamin D</th><th>IL-6</th><th>TNF-α</th></tr></thead>
+      <tbody></tbody>
+    </table>
   </div>
 
   <script>
-    // List of fields used in the form (id -> label)
-    const FIELDS = {
-      date: 'Date', time: 'Time', notes: 'Notes', hr:'Heart rate (bpm)', bp_sys:'BP sys', bp_dia:'BP dia', rr:'Resp rate', temp:'Temp (°C)', spo2:'SpO2 (%)',
-      weight:'Weight (kg)', height:'Height (cm)', bmi:'BMI', glucose:'Fasting glucose', hba1c:'HbA1c', tch:'Total cholesterol', ldl:'LDL', hdl:'HDL', tg:'Triglycerides',
-      creat:'Creatinine', bun:'BUN', egfr:'eGFR', alt:'ALT', ast:'AST', alp:'ALP', na:'Na', k:'K', cl:'Cl', hb:'Hemoglobin', wbc:'WBC', plt:'Platelets',
-      tsh:'TSH', ft4:'Free T4', vitd:'Vitamin D', crp:'CRP', esr:'ESR', b12:'B12'
-    };
-
-    function getEntries(){
-      try{
-        return JSON.parse(localStorage.getItem('biomarker_entries')||'[]');
-      }catch(e){return []}
-    }
-    function saveEntries(arr){
-      localStorage.setItem('biomarker_entries', JSON.stringify(arr));
-      renderTable();
-    }
-
+    function getData(){return JSON.parse(localStorage.getItem('biomarkerData')||'[]');}
+    function saveData(arr){localStorage.setItem('biomarkerData',JSON.stringify(arr));renderTable();}
     function addEntry(){
-      const entry = {};
-      Object.keys(FIELDS).forEach(k=>{
-        const el = document.getElementById(k);
-        entry[k] = el ? (el.value === '' ? null : el.value) : null;
-      });
-      // calculate BMI if weight & height
-      if(entry.weight && entry.height){
-        const h = parseFloat(entry.height)/100;
-        const w = parseFloat(entry.weight);
-        const bmi = w / (h*h);
-        entry.bmi = bmi.toFixed(2);
-        document.getElementById('bmi').value = entry.bmi;
-      }
-      const arr = getEntries();
-      arr.push(entry);
-      saveEntries(arr);
+      const entry={};
+      ['date','notes','glucose','hba1c','crp','vitd','il6','tnfa'].forEach(id=>entry[id]=document.getElementById(id).value);
+      const arr=getData();arr.push(entry);saveData(arr);
       document.getElementById('entryForm').reset();
-      document.getElementById('date').value = entry.date || '';
-      updateSummary();
-      return false; // prevent actual submit
+      return false;
     }
-
-    function clearForm(){
-      document.getElementById('entryForm').reset();
-      document.getElementById('bmi').value = '';
-    }
-
     function renderTable(){
-      const tbody = document.querySelector('#entriesTable tbody');
-      tbody.innerHTML = '';
-      const arr = getEntries();
-      if(arr.length===0){
-        document.getElementById('summary').innerText = 'No entries yet.';
-        return;
-      }
-      arr.slice().reverse().forEach((e, idx)=>{
-        const tr = document.createElement('tr');
-        const d = e.date||'';
-        const keyBio = [e.hba1c?('HbA1c:'+e.hba1c):'', e.glucose?('Glu:'+e.glucose):'', e.ldl?('LDL:'+e.ldl):'', e.hdl?('HDL:'+e.hdl):'', e.tch?('Chol:'+e.tch):'', e.bp_sys?('BP:'+e.bp_sys+'/'+(e.bp_dia||'')):''].filter(Boolean).slice(0,4).join(' • ');
-        tr.innerHTML = `<td>${d}</td><td>${keyBio}</td><td>${e.notes||''}</td><td><button class="small" onclick="editEntry(${arr.length-1-idx})">Edit</button> <button class="small" onclick="deleteEntry(${arr.length-1-idx})">Delete</button></td>`;
+      const data=getData();
+      const tbody=document.querySelector('#dataTable tbody');
+      tbody.innerHTML='';
+      data.forEach(row=>{
+        const tr=document.createElement('tr');
+        tr.innerHTML=`<td>${row.date||''}</td><td>${row.notes||''}</td><td>${row.glucose||''}</td><td>${row.hba1c||''}</td><td>${row.crp||''}</td><td>${row.vitd||''}</td><td>${row.il6||''}</td><td>${row.tnfa||''}</td>`;
         tbody.appendChild(tr);
       });
-      updateSummary();
-      populateChartSelect();
     }
-
-    function updateSummary(){
-      const arr = getEntries();
-      document.getElementById('summary').innerText = `Saved entries: ${arr.length}`;
-    }
-
-    function editEntry(i){
-      const arr = getEntries();
-      const e = arr[i];
-      Object.keys(FIELDS).forEach(k=>{const el=document.getElementById(k); if(el && e[k]!==null && e[k]!==undefined) el.value = e[k];});
-      // remove the original entry (will be re-saved on Save)
-      arr.splice(i,1);
-      saveEntries(arr);
-      window.scrollTo({top:0,behavior:'smooth'});
-    }
-
-    function deleteEntry(i){
-      if(!confirm('Delete this entry?')) return;
-      const arr = getEntries();
-      arr.splice(i,1);
-      saveEntries(arr);
-    }
-
-    function exportCSV(){
-      const arr = getEntries();
-      if(arr.length===0){alert('No data to export');return}
-      const keys = Object.keys(FIELDS);
-      const csv = [keys.join(',')].concat(arr.map(r=>keys.map(k=> (r[k]===null||r[k]===undefined)?'':('"'+String(r[k]).replace(/"/g,'""')+'"')).join(','))).join('\n');
-      const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url; a.download = 'biomarker_entries.csv'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
-    }
-
-    function populateChartSelect(){
-      const sel = document.getElementById('chartSelect');
-      sel.innerHTML = '';
-      Object.keys(FIELDS).forEach(k=>{
-        if(k==='date' || k==='time' || k==='notes' || k==='bmi') return; // exclude non-numeric mostly except bmi
-        const opt = document.createElement('option'); opt.value = k; opt.text = FIELDS[k]; sel.appendChild(opt);
-      });
-      // add BMI as well
-      const bmiOpt = document.createElement('option'); bmiOpt.value='bmi'; bmiOpt.text='BMI'; sel.appendChild(bmiOpt);
-    }
-
-    // Chart rendering
-    let chartInstance = null;
-    function renderChart(){
-      const key = document.getElementById('chartSelect').value;
-      const arr = getEntries();
-      if(arr.length===0){alert('No data');return}
-      const points = arr.filter(r=>r[key]!==null && r[key]!==undefined && r[key]!=='' ).slice(-50);
-      if(points.length===0){alert('No data for this biomarker');return}
-      const labels = points.map(p=>p.date || p.time || '');
-      const data = points.map(p=>Number(p[key]));
-      const ctx = document.getElementById('trendChart').getContext('2d');
-      if(chartInstance) chartInstance.destroy();
-      chartInstance = new Chart(ctx, {
-        type: 'line',
-        data: {labels, datasets:[{label:FIELDS[key],data,fill:false,tension:0.2}]},
-        options:{plugins:{legend:{display:true}},scales:{y:{beginAtZero:false}}}
-      });
-    }
-
-    function clearData(){
-      if(!confirm('Clear ALL saved biomarker data? This cannot be undone.')) return;
-      localStorage.removeItem('biomarker_entries');
-      renderTable();
-    }
-
-    // simple helpers
-    document.addEventListener('DOMContentLoaded', ()=>{
-      const today = new Date().toISOString().slice(0,10);
-      document.getElementById('date').value = today;
-      renderTable();
-      populateChartSelect();
-    });
+    document.addEventListener('DOMContentLoaded',renderTable);
   </script>
 </body>
 </html>
