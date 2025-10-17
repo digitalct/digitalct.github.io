@@ -1,124 +1,176 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Comprehensive Biomarker Tracker</title>
-  <style>
-    body{font-family:Arial, sans-serif;background:#f9fafb;color:#111;margin:0;padding:20px}
-    h1{font-size:22px;color:#333}
-    .card{background:white;padding:16px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.05);margin-bottom:20px}
-    form{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-    label{font-size:12px;color:#555;display:block;margin-bottom:4px}
-    input{width:100%;padding:8px;border:1px solid #ccc;border-radius:6px;font-size:14px}
-    button{background:#2563eb;color:white;border:none;padding:8px 10px;border-radius:6px;cursor:pointer}
-    table{width:100%;border-collapse:collapse;margin-top:10px}
-    th,td{padding:8px;border-bottom:1px solid #ddd;text-align:left;font-size:13px}
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Raj's Personal Website - Portfolio and Blog">
+    <meta name="author" content="Raj">
+    <title>Raj's Portfolio</title>
+
+    <!-- Security Headers (Content Security Policy) -->
+    <meta http-equiv="Content-Security-Policy" 
+        content="default-src 'self'; 
+                 script-src 'self'; 
+                 style-src 'self' https://fonts.googleapis.com; 
+                 font-src https://fonts.gstatic.com; 
+                 img-src 'self' data:; 
+                 connect-src 'self'; 
+                 frame-ancestors 'none';">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f6fa;
+            color: #2f3640;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #2f3640;
+            color: #fff;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        nav {
+            margin-top: 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #00a8ff;
+            margin: 0 1rem;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 3rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #2f3640;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #353b48;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #2f3640;
+            color: #fff;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #00a8ff;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0097e6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            nav a { margin: 0 0.5rem; }
+        }
+    </style>
 </head>
 <body>
-  <h1>Comprehensive Biomarker Tracker</h1>
-  <div class="card">
-    <form id="entryForm" onsubmit="return addEntry();">
-      <div><label>Date</label><input id="date" type="date" required></div>
-      <div><label>Notes</label><input id="notes" type="text"></div>
+    <!-- Header -->
+    <header>
+        <h1>Raj</h1>
+        <p>Scientist | Developer | Innovator</p>
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-      <!-- Vital Signs -->
-      <div><label>Heart Rate (bpm)</label><input id="hr" type="number"></div>
-      <div><label>Blood Pressure (Systolic/Diastolic)</label><input id="bp" type="text"></div>
-      <div><label>Oxygen Saturation (%)</label><input id="spo2" type="number"></div>
+    <!-- Main Content -->
+    <main>
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I’m Raj, a scientist passionate about exploring new technologies, building innovative solutions, and sharing knowledge. Welcome to my personal website.</p>
+        </section>
 
-      <!-- Basic Metabolic -->
-      <div><label>Glucose (mg/dL)</label><input id="glucose" type="number"></div>
-      <div><label>HbA1c (%)</label><input id="hba1c" type="number" step="0.1"></div>
-      <div><label>Creatinine (mg/dL)</label><input id="creatinine" type="number" step="0.1"></div>
+        <!-- Portfolio Section -->
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <p>Explore my projects and research work in science and technology. I focus on experimental design, data analysis, and cutting-edge innovation.</p>
+            <a href="#portfolio" class="btn">View Projects</a>
+        </section>
 
-      <!-- Lipid Profile -->
-      <div><label>Total Cholesterol (mg/dL)</label><input id="chol" type="number"></div>
-      <div><label>LDL (mg/dL)</label><input id="ldl" type="number"></div>
-      <div><label>HDL (mg/dL)</label><input id="hdl" type="number"></div>
-      <div><label>Triglycerides (mg/dL)</label><input id="tg" type="number"></div>
-      <div><label>ApoA1 (mg/dL)</label><input id="apoa1" type="number"></div>
-      <div><label>ApoB (mg/dL)</label><input id="apob" type="number"></div>
-      <div><label>Lp(a) (mg/dL)</label><input id="lpa" type="number"></div>
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>If you’d like to collaborate or have any queries, feel free to reach out via email: <a href="mailto:raj@example.com">raj@example.com</a>.</p>
+            <a href="mailto:raj@example.com" class="btn">Email Me</a>
+        </section>
+    </main>
 
-      <!-- Liver Function Tests -->
-      <div><label>ALT (U/L)</label><input id="alt" type="number"></div>
-      <div><label>AST (U/L)</label><input id="ast" type="number"></div>
-      <div><label>ALP (U/L)</label><input id="alp" type="number"></div>
-      <div><label>Bilirubin (mg/dL)</label><input id="bilirubin" type="number" step="0.1"></div>
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Raj. All Rights Reserved.
+    </footer>
 
-      <!-- Thyroid & Vitamins -->
-      <div><label>TSH (mIU/L)</label><input id="tsh" type="number"></div>
-      <div><label>Free T4 (ng/dL)</label><input id="ft4" type="number" step="0.01"></div>
-      <div><label>Vitamin D (ng/mL)</label><input id="vitd" type="number" step="0.1"></div>
-      <div><label>Vitamin B12 (pg/mL)</label><input id="b12" type="number"></div>
-      <div><label>Folate (ng/mL)</label><input id="folate" type="number"></div>
-
-      <!-- Hormones -->
-      <div><label>Testosterone (ng/dL)</label><input id="testosterone" type="number"></div>
-      <div><label>Estrogen (pg/mL)</label><input id="estrogen" type="number"></div>
-      <div><label>Progesterone (ng/mL)</label><input id="progesterone" type="number" step="0.1"></div>
-      <div><label>Cortisol (µg/dL)</label><input id="cortisol" type="number" step="0.1"></div>
-      <div><label>DHEA-S (µg/dL)</label><input id="dheas" type="number"></div>
-
-      <!-- Electrolytes and Minerals -->
-      <div><label>Calcium (mg/dL)</label><input id="calcium" type="number" step="0.1"></div>
-      <div><label>Magnesium (mg/dL)</label><input id="magnesium" type="number" step="0.1"></div>
-      <div><label>Phosphorus (mg/dL)</label><input id="phosphorus" type="number" step="0.1"></div>
-      <div><label>Iron (µg/dL)</label><input id="iron" type="number"></div>
-      <div><label>Ferritin (ng/mL)</label><input id="ferritin" type="number"></div>
-      <div><label>Transferrin Saturation (%)</label><input id="transferrin" type="number"></div>
-
-      <!-- Inflammatory Markers -->
-      <div><label>C-Reactive Protein (CRP, mg/L)</label><input id="crp" type="number" step="0.01"></div>
-      <div><label>Erythrocyte Sedimentation Rate (ESR, mm/hr)</label><input id="esr" type="number"></div>
-      <div><label>Interleukin-6 (IL-6, pg/mL)</label><input id="il6" type="number" step="0.01"></div>
-      <div><label>Tumor Necrosis Factor-alpha (TNF-α, pg/mL)</label><input id="tnfa" type="number" step="0.01"></div>
-      <div><label>Homocysteine (µmol/L)</label><input id="homocysteine" type="number" step="0.1"></div>
-
-      <!-- Urine Analysis -->
-      <div><label>Urine pH</label><input id="urine_ph" type="number" step="0.1"></div>
-      <div><label>Specific Gravity</label><input id="urine_sg" type="number" step="0.001"></div>
-      <div><label>Protein (mg/dL)</label><input id="urine_protein" type="number"></div>
-      <div><label>Glucose (mg/dL)</label><input id="urine_glucose" type="number"></div>
-      <div><label>Ketones (mg/dL)</label><input id="urine_ketones" type="number"></div>
-      <div><label>Microalbumin (mg/L)</label><input id="urine_microalbumin" type="number"></div>
-
-      <div style="grid-column:1/-1;text-align:right;margin-top:10px">
-        <button type="submit">Save</button>
-      </div>
-    </form>
-  </div>
-
-  <div class="card">
-    <table id="dataTable">
-      <thead><tr><th>Date</th><th>Notes</th><th>Glucose</th><th>HbA1c</th><th>CRP</th><th>Vitamin D</th><th>IL-6</th><th>TNF-α</th></tr></thead>
-      <tbody></tbody>
-    </table>
-  </div>
-
-  <script>
-    function getData(){return JSON.parse(localStorage.getItem('biomarkerData')||'[]');}
-    function saveData(arr){localStorage.setItem('biomarkerData',JSON.stringify(arr));renderTable();}
-    function addEntry(){
-      const entry={};
-      ['date','notes','glucose','hba1c','crp','vitd','il6','tnfa'].forEach(id=>entry[id]=document.getElementById(id).value);
-      const arr=getData();arr.push(entry);saveData(arr);
-      document.getElementById('entryForm').reset();
-      return false;
-    }
-    function renderTable(){
-      const data=getData();
-      const tbody=document.querySelector('#dataTable tbody');
-      tbody.innerHTML='';
-      data.forEach(row=>{
-        const tr=document.createElement('tr');
-        tr.innerHTML=`<td>${row.date||''}</td><td>${row.notes||''}</td><td>${row.glucose||''}</td><td>${row.hba1c||''}</td><td>${row.crp||''}</td><td>${row.vitd||''}</td><td>${row.il6||''}</td><td>${row.tnfa||''}</td>`;
-        tbody.appendChild(tr);
-      });
-    }
-    document.addEventListener('DOMContentLoaded',renderTable);
-  </script>
+    <!-- Optional JavaScript with Security Best Practices -->
+    <script nonce="YOUR_RANDOM_NONCE">
+        // Example: simple scroll animation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
