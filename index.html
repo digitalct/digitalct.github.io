@@ -1,116 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Essential Meta -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Raj's Personal Website - Portfolio and Blog">
-    <meta name="author" content="Raj">
-    <title>T. CHENGAPPA</title>
 
-    <!-- Security Headers (Content Security Policy) -->
-    <meta http-equiv="Content-Security-Policy" 
-        content="default-src 'self'; 
-                 script-src 'self'; 
-                 style-src 'self' https://fonts.googleapis.com; 
-                 font-src https://fonts.gstatic.com; 
-                 img-src 'self' data:; 
-                 connect-src 'self'; 
-                 frame-ancestors 'none';">
-    
+    <!-- SEO -->
+    <meta name="description" content="T. Chengappa - Entrepreneur, Nutritionist, and Wellness Coach. Explore books, wellness challenges, and personal growth.">
+    <meta name="author" content="T. Chengappa">
+    <title>T. CHENGAPPA | Wellness & Transformation</title>
+
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self';
+                   script-src 'self';
+                   style-src 'self' https://fonts.googleapis.com;
+                   font-src https://fonts.gstatic.com;
+                   img-src 'self' data:;
+                   connect-src 'self';
+                   frame-ancestors 'none';">
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <style>
-        /* Reset */
-        * {
+        /* Basic Reset */
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f5f6fa;
             color: #2f3640;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
+        /* Header */
         header {
             background-color: #2f3640;
             color: #fff;
-            padding: 1.5rem 2rem;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 2rem 1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         header h1 {
             font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
+            letter-spacing: 1px;
         }
 
         header p {
             font-size: 1.2rem;
+            color: #dcdde1;
         }
 
+        /* Navigation Links */
         nav {
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
 
         nav a {
-            text-decoration: none;
             color: #00a8ff;
+            text-decoration: none;
             margin: 0 1rem;
             font-weight: 500;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
+            color: #0097e6;
             text-decoration: underline;
         }
 
+        /* Main Content */
         main {
-            padding: 3rem 2rem;
-            max-width: 1000px;
-            margin: auto;
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
         }
 
         section {
             margin-bottom: 3rem;
+            text-align: center;
         }
 
         h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
             color: #2f3640;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
         }
 
         p {
-            font-size: 1rem;
             color: #353b48;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1.5rem;
-            background-color: #2f3640;
-            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 1rem;
         }
 
         /* Buttons */
         .btn {
             display: inline-block;
-            padding: 0.75rem 1.5rem;
+            padding: 0.8rem 1.6rem;
             background-color: #00a8ff;
             color: #fff;
-            border-radius: 5px;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: 500;
-            transition: background 0.3s;
+            transition: background 0.3s ease;
         }
 
         .btn:hover {
             background-color: #0097e6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2f3640;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            font-size: 0.9rem;
         }
 
         /* Responsive */
@@ -120,28 +138,45 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header>
-        <center><h1>T. CHENGAPPA</h1></center>
-        <center><p>Enterprenuer | Nutritionist | Wellness Coach</p></center>
-        <h1>Books</h1>
-
-<a href="https://ctwellthify.github.io/">My favourite Books- Credits to Authors</a>
-         <h1>90 Days Challenge for Trasformation</h1>
-
-<a href="https://ctpersonaldomain.github.io/">Tracker Update</a> 
+        <h1>T. CHENGAPPA</h1>
+        <p>Entrepreneur | Nutritionist | Wellness Coach</p>
+        <nav>
+            <a href="#books">Books</a>
+            <a href="#challenge">90-Day Challenge</a>
+        </nav>
     </header>
 
-    
+    <!-- Main Content -->
+    <main>
+        <section id="books">
+            <h2>Books</h2>
+            <p>Explore my favorite books that have shaped my journey in wellness, business, and personal transformation. Credit goes to all the inspiring authors.</p>
+            <a href="https://ctwellthify.github.io/" class="btn" target="_blank" rel="noopener noreferrer">View My Book List</a>
+        </section>
 
-    <!-- Optional JavaScript with Security Best Practices -->
-    <script nonce="YOUR_RANDOM_NONCE">
-        // Example: simple scroll animation
+        <section id="challenge">
+            <h2>90 Days Transformation Challenge</h2>
+            <p>Join me on a structured 90-day journey to achieve physical, mental, and lifestyle transformation. Track your progress daily and stay motivated!</p>
+            <a href="https://ctpersonaldomain.github.io/" class="btn" target="_blank" rel="noopener noreferrer">View Tracker</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 T. Chengappa | Designed for Growth & Wellness</p>
+    </footer>
+
+    <!-- JavaScript (Secure and Minimal) -->
+    <script nonce="random1234">
+        // Smooth scroll behavior for internal navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', e => {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                document.querySelector(anchor.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
             });
