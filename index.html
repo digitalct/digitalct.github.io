@@ -1,1 +1,157 @@
-Welcome to CT Website
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Checklist of Goals Achieved — 1988 to 2088</title>
+  <style>
+    :root{--bg:#f6f8fb;--card:#ffffff;--accent:#0366d6;--muted:#6b7280}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:var(--bg); color:#0f172a}
+    header{background:linear-gradient(90deg,#0ea5e9, #0366d6); color:white; padding:1.25rem}
+    .container{max-width:980px; margin:1.25rem auto; padding:1rem}
+    .controls{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
+    button{background:var(--accent);color:white;border:0;padding:.5rem .75rem;border-radius:8px;cursor:pointer}
+    button.secondary{background:#e6eef9;color:var(--accent)}
+    .card{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+    .year-row{display:grid;grid-template-columns:48px 1fr 220px;align-items:center;gap:8px;padding:.45rem .5rem;border-bottom:1px solid #f1f5f9}
+    .year-row input[type=text]{width:100%;padding:.45rem;border:1px solid #e6eef6;border-radius:6px}
+    .year-row label{font-weight:600}
+    .summary{margin-top:.75rem;color:var(--muted);font-size:.95rem}
+    footer{max-width:980px;margin:1.25rem auto;text-align:center;color:var(--muted);font-size:.9rem}
+    @media (max-width:640px){.year-row{grid-template-columns:40px 1fr 140px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 style="margin:0;font-size:1.25rem">Checklist of Goals Achieved — 1988 to 2088</h1>
+      <p style="margin:.35rem 0 0;opacity:.95">Check a year when a goal was achieved, add a short note, and your data will be saved locally in your browser.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="controls">
+        <button id="checkAll">Check all</button>
+        <button id="uncheckAll" class="secondary">Uncheck all</button>
+        <button id="clearNotes" class="secondary">Clear all notes</button>
+        <button id="export" class="secondary" title="Download JSON of the checklist">Export (JSON)</button>
+        <button id="import" class="secondary" title="Paste JSON to import">Import (paste JSON)</button>
+        <button id="print" class="secondary">Print</button>
+      </div>
+
+      <div id="list"></div>
+
+      <div class="summary" id="summary"></div>
+    </div>
+  </main>
+
+  <footer>
+    <small>Local save only — data is stored in your browser's localStorage. Use Export/Import to move data between devices.</small>
+  </footer>
+
+  <script>
+    const startYear = 1988;
+    const endYear = 2088; // inclusive
+    const STORAGE_KEY = 'checklist_1988_2088_v1';
+
+    // load or init
+    let data = {};
+    try{ data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch(e){ data = {}; }
+
+    const listEl = document.getElementById('list');
+    const summaryEl = document.getElementById('summary');
+
+    function save(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); updateSummary(); }
+
+    function updateSummary(){
+      const years = Object.keys(data).length ? Object.keys(data).map(n=>parseInt(n)) : [];
+      const checked = years.filter(y=>data[y] && data[y].done).length;
+      summaryEl.textContent = `Years: ${startYear} — ${endYear}. Total years: ${endYear - startYear + 1}. Marked achieved: ${checked}.`;
+    }
+
+    function makeRow(year){
+      const row = document.createElement('div'); row.className='year-row';
+
+      const cb = document.createElement('input'); cb.type='checkbox'; cb.title = 'Mark goal achieved for ' + year;
+      const lab = document.createElement('label'); lab.textContent = year; lab.htmlFor = 'cb'+year;
+      cb.id = 'cb'+year;
+
+      const note = document.createElement('input'); note.type='text'; note.placeholder='Short note / goal description (optional)'; note.maxLength=200;
+
+      const actions = document.createElement('div'); actions.style.display='flex'; actions.style.gap='6px';
+      const clearBtn = document.createElement('button'); clearBtn.textContent='Clear'; clearBtn.type='button'; clearBtn.style.background='#f3f4f6'; clearBtn.style.color='#0f172a'; clearBtn.style.border='1px solid #e6eef6'; clearBtn.style.padding='6px 8px'; clearBtn.style.borderRadius='6px';
+
+      // load existing
+      if(data[year]){ cb.checked = !!data[year].done; note.value = data[year].note || ''; }
+
+      cb.addEventListener('change', ()=>{
+        data[year] = data[year] || {};
+        data[year].done = cb.checked;
+        if(!data[year].note) data[year].note = note.value || '';
+        save();
+      });
+
+      note.addEventListener('input', ()=>{
+        data[year] = data[year] || {};
+        data[year].note = note.value;
+        save();
+      });
+
+      clearBtn.addEventListener('click', ()=>{
+        cb.checked = false; note.value = '';
+        delete data[year]; save();
+      });
+
+      row.appendChild(cb);
+      row.appendChild(lab);
+      // wrap note+button
+      const rightWrap = document.createElement('div'); rightWrap.style.display='flex'; rightWrap.style.gap='8px'; rightWrap.style.alignItems='center';
+      rightWrap.appendChild(note); rightWrap.appendChild(clearBtn);
+      row.appendChild(rightWrap);
+
+      return row;
+    }
+
+    // populate
+    for(let y = startYear; y<=endYear; y++){
+      listEl.appendChild(makeRow(y));
+    }
+
+    // controls
+    document.getElementById('checkAll').addEventListener('click', ()=>{
+      for(let y=startYear;y<=endYear;y++){ data[y] = data[y] || {}; data[y].done = true; }
+      save(); Array.from(document.querySelectorAll('[id^="cb"]')).forEach(el=>el.checked=true);
+    });
+    document.getElementById('uncheckAll').addEventListener('click', ()=>{
+      for(let y=startYear;y<=endYear;y++){ if(data[y]) data[y].done = false; }
+      save(); Array.from(document.querySelectorAll('[id^="cb"]')).forEach(el=>el.checked=false);
+    });
+    document.getElementById('clearNotes').addEventListener('click', ()=>{
+      for(let y=startYear;y<=endYear;y++){ if(data[y]) data[y].note=''; }
+      save(); Array.from(document.querySelectorAll('input[type=text]')).forEach(el=>el.value='');
+    });
+
+    document.getElementById('export').addEventListener('click', ()=>{
+      const blob = new Blob([JSON.stringify({start:startYear,end:endYear,data},null,2)], {type:'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = `checklist_${startYear}_${endYear}.json`; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+
+    document.getElementById('import').addEventListener('click', ()=>{
+      const text = prompt('Paste checklist JSON exported from this page:');
+      if(!text) return;
+      try{
+        const obj = JSON.parse(text);
+        if(obj && obj.data){ data = obj.data; localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); location.reload(); }
+        else{ alert('JSON not recognised. Expected format produced by Export.'); }
+      }catch(e){ alert('Invalid JSON: '+e.message); }
+    });
+
+    document.getElementById('print').addEventListener('click', ()=>{ window.print(); });
+
+    updateSummary();
+  </script>
+</body>
+</html>
+
