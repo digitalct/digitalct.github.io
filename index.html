@@ -1,157 +1,134 @@
-<!doctype html>
-<html lang="en">
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+       "http://www.w3.org/TR/REC-html40/loose.dtd"> 
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Checklist of Goals Achieved — 1988 to 2088</title>
-  <style>
-    :root{--bg:#f6f8fb;--card:#ffffff;--accent:#0366d6;--muted:#6b7280}
-    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:var(--bg); color:#0f172a}
-    header{background:linear-gradient(90deg,#0ea5e9, #0366d6); color:white; padding:1.25rem}
-    .container{max-width:980px; margin:1.25rem auto; padding:1rem}
-    .controls{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
-    button{background:var(--accent);color:white;border:0;padding:.5rem .75rem;border-radius:8px;cursor:pointer}
-    button.secondary{background:#e6eef9;color:var(--accent)}
-    .card{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,23,0.06)}
-    .year-row{display:grid;grid-template-columns:48px 1fr 220px;align-items:center;gap:8px;padding:.45rem .5rem;border-bottom:1px solid #f1f5f9}
-    .year-row input[type=text]{width:100%;padding:.45rem;border:1px solid #e6eef6;border-radius:6px}
-    .year-row label{font-weight:600}
-    .summary{margin-top:.75rem;color:var(--muted);font-size:.95rem}
-    footer{max-width:980px;margin:1.25rem auto;text-align:center;color:var(--muted);font-size:.9rem}
-    @media (max-width:640px){.year-row{grid-template-columns:40px 1fr 140px}}
-  </style>
+<meta name="google-site-verification" content="Q_RJMRjs9r6xbVzaxviFnRDL_4UdKvlfKEEfJoLr6-I" />
+<style type="text/css">
+body {padding: 5px 20px;}
+#content {max-width: 50em; position:relative; margin:auto;}
+</style>
+<LINK REL="SHORTCUT ICON" HREF="/favicon.ico">
+<title>About Jacques Distler</title>
 </head>
+
 <body>
-  <header>
-    <div class="container">
-      <h1 style="margin:0;font-size:1.25rem">Checklist of Goals Achieved — 1988 to 2088</h1>
-      <p style="margin:.35rem 0 0;opacity:.95">Check a year when a goal was achieved, add a short note, and your data will be saved locally in your browser.</p>
-    </div>
-  </header>
+<div id="content">
+<TABLE WIDTH=525 BORDER=0 CELLPADDING=2 CELLSPACING=2>
+<tr>
+ <td>
+  <a href="electric.jpg"><img vspace=5 src="thinker.gif" width=150 height=151
+    alt="At Electric Peak"></a> 
+ </td>
+ <td>
+  <font size="+3"><b>Jacques Distler</b></font><br>
+  <font size="+2"><b><i>Professor of Physics </i></b></font>
+  <hr>
+  <i>Physics Department, University of Texas, Austin, Texas 78712</i> <p>
+  <ul>
+   <li>Office: RLM 9.218<a href="name/"></a>
+   <li>Voice: (512) 471-2950 ::  Fax: (512) 471-4888
+   <li>Email: <a href="mailto:distler@golem.ph.utexas.edu">
+    <tt>distler@golem.ph.utexas.edu</tt></a>
+   <li>PGP <a href="distler.asc">public key</a>
+  </ul>
+ </td>
+</tr>
+</TABLE>
 
-  <main class="container">
-    <div class="card">
-      <div class="controls">
-        <button id="checkAll">Check all</button>
-        <button id="uncheckAll" class="secondary">Uncheck all</button>
-        <button id="clearNotes" class="secondary">Clear all notes</button>
-        <button id="export" class="secondary" title="Download JSON of the checklist">Export (JSON)</button>
-        <button id="import" class="secondary" title="Paste JSON to import">Import (paste JSON)</button>
-        <button id="print" class="secondary">Print</button>
-      </div>
 
-      <div id="list"></div>
+<p>
+Hello
+<strong>unknown@103.232.241.182</strong>.
+So nice of you to stop by.<a href="name/"></a>
+</p>
 
-      <div class="summary" id="summary"></div>
-    </div>
-  </main>
+<p>
+I'm a member of the <a href="http://zippy.ph.utexas.edu/index.html">
+Theory Group</a> here at UT. I've been at UT since September 1994. Before
+coming here, I was an Assistant Professor in the theory group at
+<a href="http://puhep1.princeton.edu/">Princeton</a>.
+</p>
 
-  <footer>
-    <small>Local save only — data is stored in your browser's localStorage. Use Export/Import to move data between devices.</small>
-  </footer>
+<p>
+My research interests are in string theory, quantum field theory and 
+mathematical physics. If you want to learn more about what I do, you
+might want to look at my 
+<a
+href="http://inspirehep.net/search?p=fin+a+distler%2Cj">
+publications</a>.
+</p>
 
-  <script>
-    const startYear = 1988;
-    const endYear = 2088; // inclusive
-    const STORAGE_KEY = 'checklist_1988_2088_v1';
+<p>
+These are exciting times to be a theorist. It is fair to say that we really don't yet know what string theory is about, but we are learning.
+</p>
 
-    // load or init
-    let data = {};
-    try{ data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch(e){ data = {}; }
+<h2>Useful stuff . . .</h2>
+<p>
+I've written, or am the maintainer of several pieces of open-source software. These projects can be
+found in my <a href="http://golem.ph.utexas.edu/~distler/code/">Source Code Repository</a>. 
+<a href="http://golem.ph.utexas.edu/wiki/instiki/show/HomePage">Instiki</a> and <a href="http://golem.ph.utexas.edu/forum/">Heterotic Beast</a>
+are, respectively, wiki and forum software geared to the needs of physicists and mathematicians. In particular, they provide LaTeX-like
+support for mathematical equations, via <a href="http://golem.ph.utexas.edu/~distler/blog/itex2MMLcommands.html">itex2MML</a>.
+I've also written my own <a href="TeXstuff/utarticle.cls">article class</a> for 
+LaTeX2e because the existing defaults are so unspeakably ugly. As a companion
+to this, I've written a <a
+href="http://arxiv.org/hypertex/">HyperTeX</a>-aware BibTeX <a
+href="code/utphys/">style file</a>. You can grab references in BibTeX
+format from <a href="http://inspirehep.net/">inSPIRE</a>
+and use them in your paper with essentially no retyping. And, in the height
+of coolness, e-print references automatically become clickable hyperlinks to
+the paper at the <a href="http://arXiv.org"><tt>arXiv.org</tt></a>
+e-print archives.
+</p>
 
-    const listEl = document.getElementById('list');
-    const summaryEl = document.getElementById('summary');
+<p>
+For many years, Golem was a NeXTStep machine. It was a lovely operating system,
+but it had more than its fair share of <a href="progs/index.html">security
+holes</a>. In mid-2001, Golem migrated to a G4 running MacOSX, a much more 
+modern operating system. <a href="http://golem.ph.utexas.edu/~distler/blog/archives/000497.html">Golem III</a> was a
+burly dual processor G5, which died a spectacular death, due to a CPU coolant leak.
+<a href="http://golem.ph.utexas.edu/~distler/blog/archives/002211.html">Golem IV</a> was a more demure 27" iMac.
+<a href="https://golem.ph.utexas.edu/~distler/blog/archives/002763.html">Golem V</a> is a Mac Mini, housed at the UT Data Center.
+</p> 
 
-    function save(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); updateSummary(); }
+<p>
+Classic MacOS things that seemed useful once upon a time include this
+<a href="MacStuff/EudoraNicknameIAD.html"> Internet Address Detector</a>
+and the venerable Macintosh version of the Los Alamos
+<a href="MacStuff/uufiles.hqx">uufiles</a> utility.
+</p>
 
-    function updateSummary(){
-      const years = Object.keys(data).length ? Object.keys(data).map(n=>parseInt(n)) : [];
-      const checked = years.filter(y=>data[y] && data[y].done).length;
-      summaryEl.textContent = `Years: ${startYear} — ${endYear}. Total years: ${endYear - startYear + 1}. Marked achieved: ${checked}.`;
-    }
+<h2>Life beyond physics . . . </h2>
+<p>
+<a href="http://www.austinlinks.com/">Austin</a> is a 
+really cool town. It has an impressive 
+<a href="http://www.austinlinks.com/Arts/">Arts
+scene</a>, great 
+<a
+href="http://www.austinchronicle.com/guides/restaurant/">
+restaurants</a> and an amazing number of 
+<a href="http://www.batcon.org/discover/congress.html">bats</a>
+under the Congress Avenue Bridge.
+My wife Suzanne and I are enjoying living here a lot.
+</p>
 
-    function makeRow(year){
-      const row = document.createElement('div'); row.className='year-row';
+<p>
+Here's a page with some recollections of the
+<a href="shoah/">Holocaust</a>.
+</p>
+<p>
+Finally, if your insomnia is really incurable, you can try reading my
+<a href="blog/">weblog</a>.
+</p>
+<br>
+<BLOCKQUOTE><i>"Good Heavens!" he thought to himself, "surely I can 
+never have meant to spend the whole of my life as a 
+mathematician?"</i><br>
+--"The Man Without Qualities", Robert Musil
+</BLOCKQUOTE>
 
-      const cb = document.createElement('input'); cb.type='checkbox'; cb.title = 'Mark goal achieved for ' + year;
-      const lab = document.createElement('label'); lab.textContent = year; lab.htmlFor = 'cb'+year;
-      cb.id = 'cb'+year;
-
-      const note = document.createElement('input'); note.type='text'; note.placeholder='Short note / goal description (optional)'; note.maxLength=200;
-
-      const actions = document.createElement('div'); actions.style.display='flex'; actions.style.gap='6px';
-      const clearBtn = document.createElement('button'); clearBtn.textContent='Clear'; clearBtn.type='button'; clearBtn.style.background='#f3f4f6'; clearBtn.style.color='#0f172a'; clearBtn.style.border='1px solid #e6eef6'; clearBtn.style.padding='6px 8px'; clearBtn.style.borderRadius='6px';
-
-      // load existing
-      if(data[year]){ cb.checked = !!data[year].done; note.value = data[year].note || ''; }
-
-      cb.addEventListener('change', ()=>{
-        data[year] = data[year] || {};
-        data[year].done = cb.checked;
-        if(!data[year].note) data[year].note = note.value || '';
-        save();
-      });
-
-      note.addEventListener('input', ()=>{
-        data[year] = data[year] || {};
-        data[year].note = note.value;
-        save();
-      });
-
-      clearBtn.addEventListener('click', ()=>{
-        cb.checked = false; note.value = '';
-        delete data[year]; save();
-      });
-
-      row.appendChild(cb);
-      row.appendChild(lab);
-      // wrap note+button
-      const rightWrap = document.createElement('div'); rightWrap.style.display='flex'; rightWrap.style.gap='8px'; rightWrap.style.alignItems='center';
-      rightWrap.appendChild(note); rightWrap.appendChild(clearBtn);
-      row.appendChild(rightWrap);
-
-      return row;
-    }
-
-    // populate
-    for(let y = startYear; y<=endYear; y++){
-      listEl.appendChild(makeRow(y));
-    }
-
-    // controls
-    document.getElementById('checkAll').addEventListener('click', ()=>{
-      for(let y=startYear;y<=endYear;y++){ data[y] = data[y] || {}; data[y].done = true; }
-      save(); Array.from(document.querySelectorAll('[id^="cb"]')).forEach(el=>el.checked=true);
-    });
-    document.getElementById('uncheckAll').addEventListener('click', ()=>{
-      for(let y=startYear;y<=endYear;y++){ if(data[y]) data[y].done = false; }
-      save(); Array.from(document.querySelectorAll('[id^="cb"]')).forEach(el=>el.checked=false);
-    });
-    document.getElementById('clearNotes').addEventListener('click', ()=>{
-      for(let y=startYear;y<=endYear;y++){ if(data[y]) data[y].note=''; }
-      save(); Array.from(document.querySelectorAll('input[type=text]')).forEach(el=>el.value='');
-    });
-
-    document.getElementById('export').addEventListener('click', ()=>{
-      const blob = new Blob([JSON.stringify({start:startYear,end:endYear,data},null,2)], {type:'application/json'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a'); a.href = url; a.download = `checklist_${startYear}_${endYear}.json`; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
-    });
-
-    document.getElementById('import').addEventListener('click', ()=>{
-      const text = prompt('Paste checklist JSON exported from this page:');
-      if(!text) return;
-      try{
-        const obj = JSON.parse(text);
-        if(obj && obj.data){ data = obj.data; localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); location.reload(); }
-        else{ alert('JSON not recognised. Expected format produced by Export.'); }
-      }catch(e){ alert('Invalid JSON: '+e.message); }
-    });
-
-    document.getElementById('print').addEventListener('click', ()=>{ window.print(); });
-
-    updateSummary();
-  </script>
+</div>
 </body>
 </html>
 
