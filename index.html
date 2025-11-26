@@ -85,6 +85,47 @@
         a:hover {
             border-bottom-color: transparent;
         }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1em;
+            margin: 1em 0;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 1em 0;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .document-list {
+            list-style: none;
+            padding: 0;
+        }
+        .document-list li {
+            margin: 0.5em 0;
+        }
+        .document-list a {
+            display: block;
+            padding: 1em;
+            background: #f9f9f9;
+            border-radius: 5px;
+            border-left: 4px solid #000;
+        }
         @media (max-width: 768px) {
             body {
                 padding: 20px 10px;
@@ -112,6 +153,9 @@
         <button class="tab-button" onclick="openTab(event, 'professional')">Professional</button>
         <button class="tab-button" onclick="openTab(event, 'resources')">Resources</button>
         <button class="tab-button" onclick="openTab(event, 'books')">Books</button>
+        <button class="tab-button" onclick="openTab(event, 'photos')">Photos</button>
+        <button class="tab-button" onclick="openTab(event, 'videos')">Videos</button>
+        <button class="tab-button" onclick="openTab(event, 'documents')">Documents</button>
     </div>
 
     <div id="about" class="tab-content active">
@@ -177,6 +221,45 @@
             <li>An Introduction to Mechanics by Daniel Kleppner, Robert J. Kolenkow</li>
             <li>Introduction to Classical Mechanics by David Morin</li>
         </ul>
+    </div>
+
+    <div id="photos" class="tab-content">
+        <h2>Photo Gallery</h2>
+        <div class="gallery">
+            <img src="https://via.placeholder.com/300x200?text=IIT+Hyderabad+Campus" alt="IIT Hyderabad Campus">
+            <img src="https://via.placeholder.com/300x200?text=Research+Lab" alt="Research Lab">
+            <img src="https://via.placeholder.com/300x200?text=Physics+Department" alt="Physics Department">
+            <img src="https://via.placeholder.com/300x200?text=Team+Event" alt="Team Event">
+        </div>
+        <p>Examples of campus life and lab facilities at IIT Hyderabad.</p>
+    </div>
+
+    <div id="videos" class="tab-content">
+        <h2>Video Resources</h2>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Sample Physics Lecture" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <p>A sample lecture on quantum mechanics.</p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/9bZkp7q19f0" title="IIT Hyderabad Overview" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <p>Overview of IIT Hyderabad facilities.</p>
+    </div>
+
+    <div id="documents" class="tab-content">
+        <h2>Documents & Publications</h2>
+        <ul class="document-list">
+            <li>
+                <a href="https://example.com/cv.pdf" target="_blank">Curriculum Vitae (PDF)</a>
+            </li>
+            <li>
+                <a href="https://example.com/research-paper.pdf" target="_blank">Sample Research Paper: Scanning Probe Microscopy (PDF)</a>
+            </li>
+            <li>
+                <a href="https://example.com/lab-manual.pdf" target="_blank">Lab Manual for Physics Experiments (PDF)</a>
+            </li>
+        </ul>
+        <p>Key documents related to research and teaching.</p>
     </div>
 
     <script>
