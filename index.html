@@ -38,8 +38,28 @@
             transform: translateY(-1px);
         }
         .tab-button.active {
-            background: #000;
             color: #fff;
+        }
+        .tab-about.active {
+            background: #FF6B6B;
+        }
+        .tab-professional.active {
+            background: #4ECDC4;
+        }
+        .tab-resources.active {
+            background: #45B7D1;
+        }
+        .tab-books.active {
+            background: #96CEB4;
+        }
+        .tab-photos.active {
+            background: #FFEAA7;
+        }
+        .tab-videos.active {
+            background: #DDA0DD;
+        }
+        .tab-documents.active {
+            background: #98D8C8;
         }
         .tab-content {
             display: none;
@@ -149,13 +169,13 @@
     <hr>
 
     <div class="tabs">
-        <button class="tab-button active" onclick="openTab(event, 'about')">About</button>
-        <button class="tab-button" onclick="openTab(event, 'professional')">Professional</button>
-        <button class="tab-button" onclick="openTab(event, 'resources')">Resources</button>
-        <button class="tab-button" onclick="openTab(event, 'books')">Books</button>
-        <button class="tab-button" onclick="openTab(event, 'photos')">Photos</button>
-        <button class="tab-button" onclick="openTab(event, 'videos')">Videos</button>
-        <button class="tab-button" onclick="openTab(event, 'documents')">Documents</button>
+        <button class="tab-button active tab-about" onclick="openTab(event, 'about')">About</button>
+        <button class="tab-button tab-professional" onclick="openTab(event, 'professional')">Professional</button>
+        <button class="tab-button tab-resources" onclick="openTab(event, 'resources')">Resources</button>
+        <button class="tab-button tab-books" onclick="openTab(event, 'books')">Books</button>
+        <button class="tab-button tab-photos" onclick="openTab(event, 'photos')">Photos</button>
+        <button class="tab-button tab-videos" onclick="openTab(event, 'videos')">Videos</button>
+        <button class="tab-button tab-documents" onclick="openTab(event, 'documents')">Documents</button>
     </div>
 
     <div id="about" class="tab-content active">
@@ -237,9 +257,9 @@
     <div id="videos" class="tab-content">
         <h2>Video Resources</h2>
         <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Sample Physics Lecture" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/zNVQfWC_evg" title="Feynman on Physics" frameborder="0" allowfullscreen></iframe>
         </div>
-        <p>A sample lecture on quantum mechanics.</p>
+        <p>A sample lecture on the character of physical law.</p>
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/9bZkp7q19f0" title="IIT Hyderabad Overview" frameborder="0" allowfullscreen></iframe>
         </div>
