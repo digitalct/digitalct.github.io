@@ -165,6 +165,14 @@
             border-radius: 5px;
             border-left: 4px solid #000;
         }
+        .profile-photo {
+            width: 200px;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto 1em;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
         @media (max-width: 768px) {
             body {
                 flex-direction: column;
@@ -192,13 +200,15 @@
             h1 {
                 font-size: 2em;
             }
+            .profile-photo {
+                width: 150px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="main-container">
         <nav class="sidebar">
-            <h1>
             <h1 style="font-size:30px;">T. CHENGAPPA</h1>
             <hr>
             <div class="tabs">
@@ -213,6 +223,7 @@
         </nav>
         <main class="content">
             <div id="about" class="tab-content active">
+                <img src="profile-photo.jpg" alt="T. Chengappa" class="profile-photo">
                 <p>Senior Technical Superintendent</p>
                 <p>Department of Physics</p>
                 <p>IIT Hyderabad</p>
