@@ -1,1 +1,342 @@
-Chengappa Thumisi
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T. Chengappa - Senior Technical Superintendent, IIT Hyderabad</title>
+    <style>
+        body {
+            line-height: 1.6;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #000;
+            background-color: #fff;
+            font-size: 16px;
+            display: flex;
+            min-height: 100vh;
+        }
+        .main-container {
+            display: flex;
+            width: 100%;
+        }
+        .sidebar {
+            width: 250px;
+            background: #f9f9f9;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            border-right: 1px solid #eee;
+            flex-shrink: 0;
+        }
+        .tabs {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 2em;
+        }
+        .tab-button {
+            background: #f5f5f5;
+            border: none;
+            padding: 0.8em 1.5em;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 400;
+            color: #000;
+            border-radius: 0;
+            transition: all 0.3s ease;
+            text-align: left;
+            white-space: nowrap;
+        }
+        .tab-button:hover {
+            background: #e0e0e0;
+            transform: translateY(-1px);
+        }
+        .tab-button.active {
+            color: #fff;
+        }
+        .tab-about.active {
+            background: #FF6B6B;
+        }
+        .tab-professional.active {
+            background: #4ECDC4;
+        }
+        .tab-resources.active {
+            background: #45B7D1;
+        }
+        .tab-books.active {
+            background: #96CEB4;
+        }
+        .tab-photos.active {
+            background: #FFEAA7;
+        }
+        .tab-videos.active {
+            background: #DDA0DD;
+        }
+        .tab-documents.active {
+            background: #98D8C8;
+        }
+        .content {
+            flex: 1;
+            padding: 40px 20px;
+            overflow-y: auto;
+            max-width: calc(100% - 250px);
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        h1 {
+            font-size: 2.5em;
+            font-weight: 300;
+            margin: 0 0 0.5em 0;
+            text-align: center;
+            letter-spacing: -0.02em;
+        }
+        h2 {
+            font-size: 1.5em;
+            font-weight: 400;
+            margin: 2em 0 1em 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5em;
+        }
+        p {
+            margin: 0.5em 0;
+            font-size: 1em;
+        }
+        ul {
+            margin: 0.5em 0 1.5em 0;
+            padding-left: 1.5em;
+        }
+        li {
+            margin: 0.3em 0;
+        }
+        hr {
+            margin: 2em 0;
+            border: none;
+            border-top: 1px solid #eee;
+        }
+        a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px solid #000;
+        }
+        a:hover {
+            border-bottom-color: transparent;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1em;
+            margin: 1em 0;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 1em 0;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .document-list {
+            list-style: none;
+            padding: 0;
+        }
+        .document-list li {
+            margin: 0.5em 0;
+        }
+        .document-list a {
+            display: block;
+            padding: 1em;
+            background: #f9f9f9;
+            border-radius: 5px;
+            border-left: 4px solid #000;
+        }
+        .profile-photo {
+            width: 200px;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto 1em;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 20px 10px;
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+            .tabs {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .tab-button {
+                flex: 1;
+                min-width: 120px;
+                text-align: center;
+            }
+            .content {
+                padding: 20px 10px;
+                max-width: 100%;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .profile-photo {
+                width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <nav class="sidebar">
+            <h1 style="font-size:30px;">T. CHENGAPPA</h1>
+            <hr>
+            <div class="tabs">
+                <button class="tab-button active tab-about" onclick="openTab(event, 'about')">About</button>
+                <button class="tab-button tab-professional" onclick="openTab(event, 'professional')">Professional</button>
+                <button class="tab-button tab-resources" onclick="openTab(event, 'resources')">Resources</button>
+                <button class="tab-button tab-books" onclick="openTab(event, 'books')">Books</button>
+                <button class="tab-button tab-photos" onclick="openTab(event, 'photos')">Photos</button>
+                <button class="tab-button tab-videos" onclick="openTab(event, 'videos')">Videos</button>
+                <button class="tab-button tab-documents" onclick="openTab(event, 'documents')">Documents</button>
+            </div>
+        </nav>
+        <main class="content">
+            <div id="about" class="tab-content active">
+                <img src="images/CT.jpeg" alt="T. Chengappa" class="profile-photo">
+                <p>Senior Technical Superintendent</p>
+                <p>Department of Physics</p>
+                <p>IIT Hyderabad</p>
+                <p>Kandi, Telangana 502285</p>
+                <p>India</p>
+                <p>Tel. No.: +91-40-2301-8647</p>
+                <p><strong>Email: </strong><a href="mailto:chengappa.thumisi@phy.iith.ac.in">chengappa.thumisi@phy.iith.ac.in</a></p>
+            </div>
+            <div id="professional" class="tab-content">
+                <h2>Research Laboratories</h2>
+                <ul>
+                    <li>Multimodal Scanning probe Microscope</li>
+                    <li>Ultra High Sensitive MOKE Magnetometer</li>
+                    <li>Zeta 3D Profilometer</li>
+                </ul>
+                <h2>Employment</h2>
+                <ul>
+                    <li>Senior Technical Superintendent <a href="http://www.iith.ac.in/">IIT Hyderabad</a> (2025-present)</li>
+                </ul>
+                <h2>Education</h2>
+                <ul>
+                    <li>M.Sc. (Physics), Sri Venkateswara University, Tirupati, Andhra Pradesh</li>
+                    <li>B.Sc. (M.P.C), Sri Venkateswara University, Tirupati, Andhra Pradesh</li>
+                </ul>
+            </div>
+            <div id="resources" class="tab-content">
+                <h2>Useful Links</h2>
+                <ul>
+                    <li><a href="https://www.physicsclassroom.com/">Physics Classroom</a></li>
+                    <li><a href="https://phet.colorado.edu/">PhET Simulations</a></li>
+                    <li><a href="https://functions.wolfram.com/">Mathematical Functions</a></li>
+                    <li><a href="https://scienceworld.wolfram.com/physics/">Physics World</a></li>
+                    <li><a href="https://ocw.mit.edu/">MIT Courses</a></li>
+                    <li><a href="https://www.imatheq.com/imatheq/com/imatheq/math-equation-editor.html">Equation Editor</a></li>
+                    <li><a href="https://www.modulatedlight.org/">Modulated Light</a></li>
+                    <li><a href="https://www.chemteam.info/ChemTeamIndex.html">Basics in Chemistry</a></li>
+                    <li><a href="https://www.falstad.com/circuit/e-index.html">Electronic Demonstrations</a></li>
+                    <li><a href="https://www.electronics-tutorials.ws/">Electronics Tutorials</a></li>
+                    <li><a href="https://worrydream.com/">Bret Victor</a></li>
+                    <li><a href="https://crookedtimber.org/">Crooked Timber</a></li>
+                    <li><a href="https://algassert.com/quirk">Quantum circuit simulator</a></li>
+                    <li><a href="https://quantumflytrap.com/virtual-lab/">Virtual Quantum Experiments</a></li>
+                    <li><a href="https://vanisource.org/wiki/Main_Page/">A.C.Prabhupada Guruji</a></li>
+                    <li><a href="https://quantumpedia.uk/a-brief-history-of-quantum-computing-e0bbd05893d0">History of Quantum Computing</a></li>
+                </ul>
+            </div>
+            <div id="books" class="tab-content">
+                <h2>Recommended Physics Books</h2>
+                <ul>
+                    <li><a href="https://ctwellthify.github.io/">CT e-Books </a></li>
+                    <li>The Feynman Lectures on Physics by Richard P. Feynman, Robert B. Leighton, Matthew Sands</li>
+                    <li>Fundamentals of Physics by David Halliday, Robert Resnick, Jearl Walker</li>
+                    <li>University Physics with Modern Physics by Hugh D. Young, Roger A. Freedman</li>
+                    <li>Conceptual Physics by Paul G. Hewitt</li>
+                    <li>Concepts of Physics by H.C. Verma</li>
+                    <li>An Introduction to Mechanics by Daniel Kleppner, Robert J. Kolenkow</li>
+                    <li>Introduction to Classical Mechanics by David Morin</li>
+                </ul>
+            </div>
+            <div id="photos" class="tab-content">
+                <h2>Photo Gallery</h2>
+                <div class="gallery">
+                    <img src="https://via.placeholder.com/300x200?text=IIT+Hyderabad+Campus" alt="IIT Hyderabad Campus">
+                    <img src="https://via.placeholder.com/300x200?text=Research+Lab" alt="Research Lab">
+                    <img src="https://via.placeholder.com/300x200?text=Physics+Department" alt="Physics Department">
+                    <img src="https://via.placeholder.com/300x200?text=Team+Event" alt="Team Event">
+                </div>
+                <p>Examples of campus life and lab facilities at IIT Hyderabad.</p>
+            </div>
+            <div id="videos" class="tab-content">
+                <h2>Video Resources</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/watch?v=sLb9Z0mEc78&list=PLV3JHlBNPRcdSzL9Axpy7rtZh2G5uQEc3&index=7" title="magnetostriction" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>A sample lecture on the character of physical law.</p>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/watch?v=sLb9Z0mEc78&list=PLV3JHlBNPRcdSzL9Axpy7rtZh2G5uQEc3&index=7" title="IIT Hyderabad Overview" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>Overview of IIT Hyderabad facilities.</p>
+            </div>
+            <div id="documents" class="tab-content">
+                <h2>Documents & Publications</h2>
+                <ul class="document-list">
+                    <li>
+                        <a href="https://example.com/cv.pdf" target="_blank">Curriculum Vitae (PDF)</a>
+                    </li>
+                    <li>
+                        <a href="https://example.com/research-paper.pdf" target="_blank">Sample Research Paper: Scanning Probe Microscopy (PDF)</a>
+                    </li>
+                    <li>
+                        <a href="https://example.com/lab-manual.pdf" target="_blank">Lab Manual for Physics Experiments (PDF)</a>
+                    </li>
+                </ul>
+                <p>Key documents related to research and teaching.</p>
+            </div>
+        </main>
+    </div>
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tabbuttons;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tabbuttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
+
