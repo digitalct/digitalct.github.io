@@ -3,86 +3,117 @@
 <head>
   <meta charset="UTF-8">
   <title>T. Chengappa</title>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+    }
+
+    .section {
+      flex: 1;
+      background-color: #eeeeee;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    img {
+      border-radius: 8px;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
 </head>
 
-<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+<body>
 
   <h1>T. Chengappa</h1>
 
-  <div style="
-    background-color: #eeeeee;
-    padding: 20px;
-    border-radius: 12px;
-    width: fit-content;
-  ">
+  <div class="container">
 
-    <table cellpadding="8">
-      <tr>
-        <td rowspan="10">
-          <img src="images/CT.jpeg" alt="T. Chengappa" width="220" height="220">
-        </td>
-        <td>
-          <a href="https://samuract.github.io" target="_blank">Personal Website</a>
-        </td>
-      </tr>
+    <!-- Section 1 : Profile -->
+    <div class="section">
+      <table cellpadding="8">
+        <tr>
+          <td rowspan="10">
+            <img src="images/CT.jpeg" alt="T. Chengappa" width="220" height="220">
+          </td>
+          <td>
+            <a href="https://samuract.github.io" target="_blank">Personal Website</a>
+          </td>
+        </tr>
 
-      <tr>
-        <td>
-          <a href="https://drive.google.com/file/d/1SrYZ2KLsbR39Nst0grIYUYWcX4MIAGPQ/view?usp=drive_link" target="_blank">
-            Brief Curriculum Vitae
-          </a>
-        </td>
-      </tr>
+        <tr>
+          <td>
+            <a href="https://drive.google.com/file/d/1SrYZ2KLsbR39Nst0grIYUYWcX4MIAGPQ/view?usp=drive_link" target="_blank">
+              Brief Curriculum Vitae
+            </a>
+          </td>
+        </tr>
 
-      <tr>
-        <td>
-          <a href="https://ctwellthify.github.io/#home" target="_blank">Books</a>
-        </td>
-      </tr>
+        <tr><td><a href="https://ctwellthify.github.io/#home" target="_blank">Books</a></td></tr>
+        <tr><td><a href="https://ctpersonaldomain.github.io/" target="_blank">Photos</a></td></tr>
+        <tr><td><a href="https://youtube.com/@chengappathumisi147" target="_blank">Videos</a></td></tr>
+        <tr><td><a href="#">Documents</a></td></tr>
+        <tr><td><a href="#">Research</a></td></tr>
+        <tr><td><a href="#">Publications</a></td></tr>
+        <tr><td><a href="#">Awards</a></td></tr>
+        <tr><td><a href="#">Conferences</a></td></tr>
+      </table>
+    </div>
 
-      <tr>
-        <td>
-          <a href="https://ctpersonaldomain.github.io/" target="_blank">Photos</a>
-        </td>
-      </tr>
+    <!-- Section 2 : About / Bio -->
+    <div class="section">
+      <h2>About</h2>
+      <p>
+        Scientist with interests in physics, research instrumentation,
+        education, and interdisciplinary learning.
+      </p>
 
-      <tr>
-        <td>
-          <a href="https://youtube.com/@chengappathumisi147" target="_blank">Videos</a>
-        </td>
-      </tr>
+      <h3>Areas of Interest</h3>
+      <ul>
+        <li>Experimental Physics</li>
+        <li>Laboratory Management</li>
+        <li>Scientific Writing</li>
+        <li>Technology & Education</li>
+      </ul>
+    </div>
 
-      <tr>
-        <td>
-          <a href="http://www.google.com">Documents</a></td>
-      </tr>
-
-      <tr>
-        <td>
-          <a href="http://www.google.com">Research</a></td>
-      </tr>
-
-      <tr>
-        <td>
-          <a href="http://www.google.com">Publications</a></td>
-      </tr>
-
-      <tr>
-        <td>
-          <a href="http://www.google.com">Awards</a></td>
-      </tr>
-
-      <tr>
-        <td>
-          <a href="Conferences">Conferences</a></td>
-      </tr>
-    </table>
+    <!-- Section 3 : Updates / News -->
+    <div class="section">
+      <h2>Updates</h2>
+      <ul>
+        <li>📌 Ongoing research projects</li>
+        <li>📘 Book writing in progress</li>
+        <li>🎤 Conference participation</li>
+        <li>🎥 Educational videos on YouTube</li>
+      </ul>
+    </div>
 
   </div>
 
-  <p>
+  <footer>
     © 2025 Created by GCS
-  </p>
+  </footer>
 
 </body>
 </html>
+
+
