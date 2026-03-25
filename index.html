@@ -1,123 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>T. Chengappa | IIT Hyderabad</title>
-
-<style>
-body{
-  font-family: Arial, sans-serif;
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 12px;
-  line-height: 1.45;
-  color:#333;
-  background:#fff;
-}
-
-h1{
-  text-align:center;
-  font-size:2.2rem;
-  margin-bottom:0.25rem;
-}
-
-.subtitle{
-  text-align:center;
-  font-size:1.15rem;
-  color:#555;
-  margin-bottom:1.2rem;
-}
-
-.profile{
-  text-align:center;
-  margin-bottom:1rem;
-}
-
-.profile img{
-  width:150px;
-  height:150px;
-  border-radius:50%;
-  object-fit:cover;
-  border:3px solid #eee;
-}
-
-.info{
-  text-align:center;
-  margin:1rem 0;
-}
-
-.info p{
-  margin:0.4rem 0;
-  font-size:1.05rem;
-}
-
-.info strong{ color:#0066cc; }
-
-.links{
-  text-align:center;
-  margin:1.4rem 0;
-}
-
-.links a{
-  display:inline-block;
-  margin:0 0.7rem;
-  padding:7px 18px;
-  background:#0066cc;
-  color:#fff;
-  text-decoration:none;
-  border-radius:4px;
-  font-weight:600;
-}
-
-.links a.books{ background:#28a745; }
-
-.links a:hover{ opacity:0.9; }
-
-footer{
-  text-align:center;
-  color:#777;
-  margin-top:1.5rem;
-  font-size:0.9rem;
-  border-top:1px solid #eee;
-  padding-top:0.8rem;
-}
-
-@media(max-width:600px){
-  h1{font-size:1.9rem;}
-  .profile img{width:130px;height:130px;}
-  .links a{margin:0.4rem;}
-}
-</style>
+    <title>3 Frame Layout</title>
 </head>
 
-<body>
+<frameset rows="20%,80%">
+    <!-- Top Frame -->
+    <frame src="top.html" name="topFrame">
 
-<h1>T. Chengappa</h1>
-<p class="subtitle">
-Senior Technical Superintendent<br>
-Department of Physics, IIT Hyderabad
-</p>
+    <!-- Bottom Section Split into Left + Content -->
+    <frameset cols="25%,75%">
+        <frame src="menu.html" name="menuFrame">
+        <frame src="home.html" name="contentFrame">
+    </frameset>
 
-<div class="profile">
-<img src="images/CT.jpeg" alt="T. Chengappa">
-</div>
+</frameset>
 
-<div class="info">
-<p><strong>Email:</strong> <a href="mailto:chengappa.thumisi@phy.iith.ac.in">chengappa.thumisi@phy.iith.ac.in</a></p>
-<p><strong>Office Phone:</strong> +91-40-2301-6900</p>
-<p><strong>Office Address:</strong><br>
-PH-108, I Floor,<br>
-Department of Physics,<br>
-IIT Hyderabad, Kandi,<br>
-Sangareddy – 502284</p>
-</div>
-
-
-
-<footer>
-Last modified: 17th March 2026
-</footer>
-
-</body>
 </html>
