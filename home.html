@@ -1,13 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Physics Lab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.05);
+      position: sticky;
+      top: 0;
+    }
+
+    header h1 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00e6ff;
+    }
+
+    .hero {
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: auto;
+      opacity: 0.8;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 30px;
+      background: #00e6ff;
+      color: #000;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #00bcd4;
+    }
+
+    .features {
+      padding: 80px 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.3);
+      margin-top: 50px;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-    <h2>Home Page</h2>
-    <p>Welcome to the home page.</p>    
-    <img src="images/CT.jpeg" alt="CT" width="250">
+
+<header>
+  <h1>⚛ AI Physics Lab</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Experiments</a>
+    <a href="#">Simulations</a>
+    <a href="#">Research</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h2>Revolutionizing Physics with Artificial Intelligence</h2>
+    <p>
+      Explore next-generation physics experiments powered by AI. Simulate, analyze, and innovate using intelligent tools designed for researchers, students, and educators.
+    </p>
+    <a href="#" class="btn">Explore Experiments</a>
+  </div>
+</section>
+
+<section class="features">
+  <div class="card">
+    <h3>🔬 Smart Experiments</h3>
+    <p>AI-assisted experiment design and automation for accurate and efficient results.</p>
+  </div>
+
+  <div class="card">
+    <h3>📊 Data Analysis</h3>
+    <p>Advanced data processing with machine learning for deep insights.</p>
+  </div>
+
+  <div class="card">
+    <h3>🧠 Intelligent Models</h3>
+    <p>Integrate AI models to predict, simulate, and optimize physical systems.</p>
+  </div>
+
+  <div class="card">
+    <h3>🌐 Virtual Labs</h3>
+    <p>Perform experiments remotely with interactive simulations.</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 AI Physics Lab | Designed for Innovation in Science
+</footer>
+
 </body>
 </html>
