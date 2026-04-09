@@ -1,7 +1,159 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Timeline | 2008 - 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2d3436;
+            --accent-color: #0984e3;
+            --bg-color: #ffffff;
+            --line-color: #dfe6e9;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 0 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        header h1 {
+            font-weight: 600;
+            letter-spacing: -1px;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #636e72;
+            font-weight: 300;
+        }
+
+        /* Timeline Logic */
+        .timeline {
+            position: relative;
+            border-left: 2px solid var(--line-color);
+            padding-left: 40px;
+            margin-left: 20px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -49px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--bg-color);
+            border: 2px solid var(--accent-color);
+        }
+
+        .year {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .content h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .content p {
+            margin-top: 10px;
+            color: #636e72;
+            max-width: 600px;
+        }
+
+        /* Animation */
+        .timeline-item {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container { margin: 50px auto; }
+            header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
 <body>
-    <h2>Home</h2>
-    <p>This is Homepage</p>
+
+    <div class="container">
+        <header>
+            <h1>My Progress</h1>
+            <p>A journey from 2008 to 2026</p>
+        </header>
+
+        <div class="timeline">
+            
+            <div class="timeline-item" style="animation-delay: 0.1s;">
+                <span class="year">2008</span>
+                <div class="content">
+                    <h3>The Beginning</h3>
+                    <p>This is where the journey started. Mention your major milestones, education, or the first steps into your career here.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" style="animation-delay: 0.3s;">
+                <span class="year">2015</span>
+                <div class="content">
+                    <h3>Significant Growth</h3>
+                    <p>A mid-point reflecting key transitions, professional shifts, or major life events that shaped your direction.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" style="animation-delay: 0.5s;">
+                <span class="year">2024</span>
+                <div class="content">
+                    <h3>Current Momentum</h3>
+                    <p>Focusing on refining skills and expanding influence in your chosen field.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" style="animation-delay: 0.7s;">
+                <span class="year">2026</span>
+                <div class="content">
+                    <h3>Future Vision</h3>
+                    <p>Looking ahead to the goals set for 2026 and the legacy you aim to build by this point.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </body>
 </html>
