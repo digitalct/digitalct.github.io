@@ -1,7 +1,194 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key Resources for Experimental Spintronics & Magnetic Materials Scholars</title>
+  <style>
+    :root {
+      --bg-color: #0d1117;
+      --card-bg: #161b22;
+      --accent: #58a6ff;
+      --accent-hover: #1f6feb;
+      --text: #c9d1d9;
+      --text-heading: #f0f6fc;
+      --border: #30363d;
+      --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      background-color: var(--bg-color);
+      color: var(--text);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: var(--text-heading);
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+      color: var(--text);
+    }
+
+    .category-title {
+      color: var(--accent);
+      font-size: 1.3rem;
+      margin: 2rem 0 1rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .resource-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .resource-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .resource-name {
+      color: var(--text-heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .resource-desc {
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+
+    .resource-link {
+      display: inline-block;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      font-family: monospace;
+    }
+
+    .resource-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (min-width: 600px) {
+      .resource-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
 <body>
-<h1>
-Useful Links
-</h1>
+
+  <div class="container">
+    <h1>Key Resources for Experimental Physics Scholars</h1>
+    <p class="subtitle">Curated databases, open-access resources, software packages, and research portals for Spintronics and Magnetic Materials.</p>
+
+    <!-- Category 1 -->
+    <h2 class="category-title">1. Micromagnetic &amp; Magnetics Simulation Software</h2>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <div class="resource-name">Mumax3 (GPU-Accelerated Micromagnetics)</div>
+        <div class="resource-desc">High-performance GPU-based micromagnetic simulation software widely used to model domain wall dynamics, skyrmions, and spin waves.</div>
+        <a href="https://mumax.github.io" target="_blank" rel="noopener noreferrer" class="resource-link">https://mumax.github.io &rarr;</a>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-name">OOMMF (Object Oriented MicroMagnetic Framework)</div>
+        <div class="resource-desc">The NIST standard framework for 2D/3D micromagnetic calculations and domain structure predictions.</div>
+        <a href="https://math.nist.gov/oommf/" target="_blank" rel="noopener noreferrer" class="resource-link">https://math.nist.gov/oommf/ &rarr;</a>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-name">Vampire (Atomistic Spin Dynamics)</div>
+        <div class="resource-desc">Atomistic simulation package for modeling magnetic materials at finite temperatures, ideal for Curie temperature calculations and exchange coupling.</div>
+        <a href="https://vampire.york.ac.uk" target="_blank" rel="noopener noreferrer" class="resource-link">https://vampire.york.ac.uk &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Category 2 -->
+    <h2 class="category-title">2. Open Crystallographic &amp; Material Databases</h2>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <div class="resource-name">Crystallography Open Database (COD)</div>
+        <div class="resource-desc">An open-access collection of crystal structures (CIF files) essential for setting up XRD phase identification and atomic models.</div>
+        <a href="http://www.crystallography.net/cod/" target="_blank" rel="noopener noreferrer" class="resource-link">http://www.crystallography.net/cod/ &rarr;</a>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-name">The Materials Project</div>
+        <div class="resource-desc">An open database providing calculated electronic, magnetic, and crystal properties for thousands of inorganic compounds.</div>
+        <a href="https://materialsproject.org" target="_blank" rel="noopener noreferrer" class="resource-link">https://materialsproject.org &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Category 3 -->
+    <h2 class="category-title">3. Society Journals &amp; Preprint Repositories</h2>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <div class="resource-name">arXiv (Condensed Matter)</div>
+        <div class="resource-desc">Free repository for preprints in experimental spintronics, magnetism, and condensed matter physics.</div>
+        <a href="https://arxiv.org/archive/cond-mat" target="_blank" rel="noopener noreferrer" class="resource-link">https://arxiv.org/archive/cond-mat &rarr;</a>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-name">IEEE Magnetics Society</div>
+        <div class="resource-desc">Access point for conference proceedings (INTERMAG, MMM) and publications covering experimental magnetism and spintronic devices.</div>
+        <a href="https://ieeemagnetics.org" target="_blank" rel="noopener noreferrer" class="resource-link">https://ieeemagnetics.org &rarr;</a>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-name">AIP Journal of Applied Physics / APL</div>
+        <div class="resource-desc">Leading journals publishing experimental setups, MOKE magnetometry, AFM/MFM studies, and spin-torque measurements.</div>
+        <a href="https://pubs.aip.org" target="_blank" rel="noopener noreferrer" class="resource-link">https://pubs.aip.org &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Category 4 -->
+    <h2 class="category-title">4. Open Analysis &amp; Data Processing Tools</h2>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <div class="resource-name">Gwyddion</div>
+        <div class="resource-desc">Free, open-source modular program for SPM (AFM, MFM, STM) data visualization and quantitative profile analysis.</div>
+        <a href="http://gwyddion.net" target="_blank" rel="noopener noreferrer" class="resource-link">http://gwyddion.net &rarr;</a>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-name">FullProf Suite</div>
+        <div class="resource-desc">X-ray and neutron diffraction profile analysis suite for Rietveld refinement of magnetic crystal structures.</div>
+        <a href="https://www.ill.eu/sites/fullprof/" target="_blank" rel="noopener noreferrer" class="resource-link">https://www.ill.eu/sites/fullprof/ &rarr;</a>
+      </div>
+    </div>
+
+  </div>
+
 </body>
 </html>
