@@ -1,16 +1,133 @@
-<section id="about-chengappa">
-  
-  <p>
-    By profession, I'm working as Senior Technical Superintendent in the Department of Physics at the <em>Indian Institute of Technology, Hyderabad</em>.  
-  </p>
-  <p>
-    I have done M.Sc. in Condensed Matter Physics from Sri Venkateswara University, with deep expertise in Condensed Matter Physics,optics, lasers, nanotechnology, and applied fields.   
-  </p>
-  <p>
-    I am handling advanced research equipment such as Multimodal Scanning Probe Microscope - atomic force microscopy (AFM), Ultra High Sensitive MOKE Magnetometer and Zeta 3D Profilometer.  
-  </p>
-  <p>
-    In addition to his technical contributions, I am  passionate about innovation, education,  community-building,  scientific skills with a collaborative spirit.  
-  </p>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Chengappa</title>
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      --card-bg: rgba(30, 41, 59, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      font-family: var(--font-family);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    #about-chengappa {
+      max-width: 680px;
+      width: 100%;
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 2.5rem 2.5rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle top accent line */
+    #about-chengappa::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+    }
+
+    #about-chengappa p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text-main);
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    #about-chengappa p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Elegant styling for emphasis elements */
+    #about-chengappa em {
+      font-style: normal;
+      font-weight: 600;
+      color: #ffffff;
+      border-bottom: 1px dashed var(--accent);
+      padding-bottom: 2px;
+    }
+
+    /* Highlight badge for key expertise/roles */
+    .highlight {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Visual list-like feel for equipment */
+    .equipment-tag {
+      display: inline-block;
+      background: var(--accent-glow);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      margin: 0.2rem 0;
+    }
+
+    @media (max-width: 640px) {
+      #about-chengappa {
+        padding: 1.75rem 1.5rem;
+      }
+      #about-chengappa p {
+        font-size: 0.98rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section id="about-chengappa">
+    <p>
+      By profession, I'm working as <span class="highlight">Senior Technical Superintendent</span> in the Department of Physics at the <em>Indian Institute of Technology, Hyderabad</em>.
+    </p>
+    
+    <p>
+      I have completed my M.Sc. in Condensed Matter Physics from Sri Venkateswara University, with deep expertise in Condensed Matter Physics, optics, lasers, nanotechnology, and applied fields.
+    </p>
+    
+    <p>
+      I manage advanced research equipment, including the <span class="equipment-tag">Multimodal Scanning Probe Microscope (AFM)</span>, <span class="equipment-tag">Ultra High Sensitive MOKE Magnetometer</span>, and <span class="equipment-tag">Zeta 3D Profilometer</span>.
+    </p>
+    
+    <p>
+      In addition to my technical contributions, I am passionate about innovation, education, community-building, and bringing scientific skills together with a collaborative spirit.
+    </p>
+  </section>
+
+</body>
+</html>
