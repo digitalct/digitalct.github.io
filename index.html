@@ -1,18 +1,225 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T. Chengappa | Profile</title>
+  <style>
+    :root {
+      --bg: #090d12;
+      --card-bg: #121721;
+      --card-border: #232d3d;
+      --text-main: #c5d1de;
+      --text-heading: #f0f4f8;
+      
+      /* Heading Colors */
+      --color-profile: #38bdf8;  /* Cyan/Blue */
+      --color-contact: #4ade80;  /* Emerald Green */
+      --color-tech: #f43f5e;     /* Rose Red */
+      --color-research: #a855f7; /* Purple */
+
+      --font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-family);
+      min-height: 100vh;
+      padding: 3rem 1.5rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* 4-Column Grid Container */
+    .grid-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.75rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Column 1: Image & Name Styling */
+    .card-profile {
+      border-top: 3px solid var(--color-profile);
+      align-items: center;
+      text-align: center;
+    }
+
+    .profile-img {
+      width: 100%;
+      max-width: 180px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid var(--card-border);
+      margin-bottom: 1.25rem;
+    }
+
+    .card-profile h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--color-profile);
+      letter-spacing: 0.5px;
+    }
+
+    /* Column Headings with Distinct Colors */
+    .heading-contact {
+      color: var(--color-contact);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(74, 222, 128, 0.2);
+      padding-bottom: 0.5rem;
+    }
+
+    .heading-tech {
+      color: var(--color-tech);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(244, 63, 94, 0.2);
+      padding-bottom: 0.5rem;
+    }
+
+    .heading-research {
+      color: var(--color-research);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+      padding-bottom: 0.5rem;
+    }
+
+    /* Column Borders */
+    .card-contact { border-top: 3px solid var(--color-contact); }
+    .card-tech { border-top: 3px solid var(--color-tech); }
+    .card-research { border-top: 3px solid var(--color-research); }
+
+    /* Content Styling */
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+    }
+
+    .card p strong {
+      color: var(--text-heading);
+    }
+
+    .email-link {
+      color: var(--color-contact);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .email-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Item List Styling */
+    .item-list {
+      list-style: none;
+    }
+
+    .item-list li {
+      position: relative;
+      padding-left: 1.2rem;
+      margin-bottom: 0.85rem;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .item-list-tech li::before {
+      content: "■";
+      position: absolute;
+      left: 0;
+      color: var(--color-tech);
+      font-size: 0.8rem;
+    }
+
+    .item-list-research li::before {
+      content: "▲";
+      position: absolute;
+      left: 0;
+      color: var(--color-research);
+      font-size: 0.7rem;
+    }
+
+    /* Responsive Adjustments for Smaller Screens */
+    @media (max-width: 1024px) {
+      .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
 <body>
-  <img src="images/CT_2026.png" alt="The CT" style="width:250px;height:300px;">
-  <h1 style="margin-bottom: 4px;">T. CHENGAPPA</h1>  
-  <h2 style="margin-top: 0; margin-bottom: 8px;">Contact:</h2>
-  <p style="margin: 2px 0;">Senior Technical Superintendent</p>  
-  <p style="margin: 2px 0;">Department of Physics</p>  
-  <p style="margin: 2px 0;">Indian Institute of Technology Hyderabad</p>  
-  <p style="margin: 2px 0;">E-mail: chengappa.thumisi@phy.iith.ac.in</p>
-    <h2 style="margin-top: 0; margin-bottom: 8px;">Technical Expertise :</h2>
-  <h2 style="margin-top: 0; margin-bottom: 8px;">Research related:</h2>
-  <p style="margin: 2px 0;">Multimodal Scanning Probe Microscope (AFM)</p>  
-  <p style="margin: 2px 0;">Ultra High Sensitive Magneto Optic Kerr Effect (MOKE) Magnetometer</p>  
-  <p style="margin: 2px 0;">Zeta 3D Optical Profilometer and Metrology</p>  
-  <p style="margin: 2px 0;">Fourier Transform Infrared Spectrometer</p>
+
+  <div class="grid-container">
+    
+    <!-- Column 1: Profile & Name -->
+    <div class="card card-profile">
+      <img src="images/CT_2026.png" alt="T. Chengappa" class="profile-img">
+      <h1>T. CHENGAPPA</h1>
+    </div>
+
+    <!-- Column 2: Contact Info -->
+    <div class="card card-contact">
+      <h2 class="heading-contact">Contact Details</h2>
+      <p><strong>Position:</strong><br>Senior Technical Superintendent</p>
+      <p><strong>Department:</strong><br>Department of Physics</p>
+      <p><strong>Institute:</strong><br>Indian Institute of Technology Hyderabad</p>
+      <p><strong>E-mail:</strong><br><a href="mailto:chengappa.thumisi@phy.iith.ac.in" class="email-link">chengappa.thumisi@phy.iith.ac.in</a></p>
+    </div>
+
+    <!-- Column 3: Technical Expertise -->
+    <div class="card card-tech">
+      <h2 class="heading-tech">Technical Expertise</h2>
+      <ul class="item-list item-list-tech">
+        <li>Nanotechnology &amp; Advanced Instrumentation</li>
+        <li>Optics &amp; Laser Systems Operations</li>
+        <li>Metrology &amp; Surface Profilometry</li>
+        <li>Spectroscopic Analysis &amp; Data Fitting</li>
+      </ul>
+    </div>
+
+    <!-- Column 4: Research Related -->
+    <div class="card card-research">
+      <h2 class="heading-research">Research Facilities</h2>
+      <ul class="item-list item-list-research">
+        <li>Multimodal Scanning Probe Microscope (AFM)</li>
+        <li>Ultra High Sensitive Magneto Optic Kerr Effect (MOKE) Magnetometer</li>
+        <li>Zeta 3D Optical Profilometer and Metrology</li>
+        <li>Fourier Transform Infrared Spectrometer (FTIR)</li>
+      </ul>
+    </div>
+
+  </div>
+
 </body>
 </html>
