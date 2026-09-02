@@ -3,243 +3,183 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>T. Chengappa | Profile</title>
+  <title>T. Chengappa - Academic & Technical Profile</title>
   <style>
-    :root {
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --card-border: #e2e8f0;
-      --text-main: #334155;
-      --text-heading: #0f172a;
-      
-      /* Section Accent Colors */
-      --color-profile: #0284c7;  /* Deep Sky Blue */
-      --color-contact: #16a34a;  /* Forest Green */
-      --color-tech: #e11d48;     /* Crimson Red */
-      --color-research: #9333ea; /* Vibrant Purple */
-      --color-edu: #d97706;      /* Amber / Bronze */
-      --color-exp: #0891b2;      /* Deep Cyan */
-      --color-conf: #db2777;     /* Rose Pink */
-      --color-idea: #059669;     /* Emerald Green */
-
-      --font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      background: var(--bg);
-      color: var(--text-main);
-      font-family: var(--font-family);
-      min-height: 100vh;
-      padding: 3rem 1.5rem;
-      -webkit-font-smoothing: antialiased;
+      background-color: #ffffff;
+      color: #000000;
+      font-family: "CMU Sans Serif", "Computer Modern Sans", "Segoe UI", sans-serif;
+      font-size: 9pt;
+      line-height: 1.35;
+      margin: 20px;
     }
 
-    /* Single Column Container */
-    .single-column-container {
-      max-width: 750px;
+    table {
+      width: 100%;
+      max-width: 800px;
       margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
+      border-collapse: collapse;
+      border: 1px solid #000000;
     }
 
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      padding: 1.75rem 2rem;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    th, td {
+      border: 1px solid #000000;
+      padding: 6px 10px;
+      vertical-align: top;
+      font-size: 9pt;
     }
 
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    .profile-header {
+      text-align: center;
+      background-color: #f5f5f5;
     }
 
-    /* Column Accent Left Borders */
-    .card-profile { border-left: 6px solid var(--color-profile); align-items: center; text-align: center; }
-    .card-contact { border-left: 6px solid var(--color-contact); }
-    .card-tech { border-left: 6px solid var(--color-tech); }
-    .card-research { border-left: 6px solid var(--color-research); }
-    .card-edu { border-left: 6px solid var(--color-edu); }
-    .card-exp { border-left: 6px solid var(--color-exp); }
-    .card-conf { border-left: 6px solid var(--color-conf); }
-    .card-idea { border-left: 6px solid var(--color-idea); }
-
-    .profile-img {
-      width: 160px;
-      height: 200px;
+    .profile-header img {
+      width: 100px;
+      height: 125px;
       object-fit: cover;
-      border-radius: 8px;
-      border: 1px solid var(--card-border);
-      margin-bottom: 1rem;
+      border: 1px solid #000000;
+      margin-bottom: 6px;
     }
 
-    .card-profile h1 {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--color-profile);
-      letter-spacing: 0.5px;
+    .profile-header h1 {
+      font-size: 11pt;
+      font-weight: bold;
+      margin: 0 0 2px 0;
+      text-transform: uppercase;
     }
 
-    /* Section Headings */
-    .heading-contact { color: var(--color-contact); border-bottom: 1px solid rgba(22, 163, 74, 0.2); }
-    .heading-tech { color: var(--color-tech); border-bottom: 1px solid rgba(225, 29, 72, 0.2); }
-    .heading-research { color: var(--color-research); border-bottom: 1px solid rgba(147, 51, 234, 0.2); }
-    .heading-edu { color: var(--color-edu); border-bottom: 1px solid rgba(217, 119, 6, 0.2); }
-    .heading-exp { color: var(--color-exp); border-bottom: 1px solid rgba(8, 145, 178, 0.2); }
-    .heading-conf { color: var(--color-conf); border-bottom: 1px solid rgba(219, 39, 119, 0.2); }
-    .heading-idea { color: var(--color-idea); border-bottom: 1px solid rgba(5, 150, 105, 0.2); }
-
-    .card h2 {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
+    .section-title {
+      font-weight: bold;
+      width: 22%;
+      background-color: #fafafa;
+      text-align: left;
     }
 
-    /* General Content Styling */
-    .card p {
-      font-size: 0.98rem;
-      line-height: 1.6;
-      margin-bottom: 0.6rem;
+    ul {
+      margin: 0;
+      padding-left: 15px;
     }
 
-    .card p strong {
-      color: var(--text-heading);
+    li {
+      margin-bottom: 2px;
     }
 
-    .email-link {
-      color: var(--color-contact);
-      font-weight: 600;
-      text-decoration: none;
-      word-break: break-all;
+    li:last-child {
+      margin-bottom: 0;
     }
 
-    .email-link:hover {
+    p {
+      margin: 0 0 2px 0;
+    }
+
+    a {
+      color: #000000;
       text-decoration: underline;
     }
-
-    /* List Custom Bullet Styles */
-    .item-list {
-      list-style: none;
-    }
-
-    .item-list li {
-      position: relative;
-      padding-left: 1.4rem;
-      margin-bottom: 0.85rem;
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-
-    .item-list-tech li::before { content: "■"; position: absolute; left: 0; color: var(--color-tech); font-size: 0.8rem; }
-    .item-list-research li::before { content: "▲"; position: absolute; left: 0; color: var(--color-research); font-size: 0.7rem; }
-    .item-list-edu li::before { content: "◆"; position: absolute; left: 0; color: var(--color-edu); font-size: 0.8rem; }
-    .item-list-exp li::before { content: "●"; position: absolute; left: 0; color: var(--color-exp); font-size: 0.7rem; }
-    .item-list-conf li::before { content: "★"; position: absolute; left: 0; color: var(--color-conf); font-size: 0.8rem; }
-    .item-list-idea li::before { content: "⚡"; position: absolute; left: 0; color: var(--color-idea); font-size: 0.8rem; }
   </style>
 </head>
 <body>
 
-  <div class="single-column-container">
-    
-    <!-- 1. Profile & Photo -->
-    <div class="card card-profile">
-      <img src="images/CT_2026.png" alt="T. Chengappa" class="profile-img">
-      <h1>T. CHENGAPPA</h1>
-      <p style="color: #64748b; font-size: 0.9rem; margin-top: 0.2rem;">Senior Technical Superintendent | Department of Physics</p>
-    </div>
+  <table>
+    <!-- Header Row -->
+    <tr>
+      <td colspan="2" class="profile-header">
+        <img src="images/CT_2026.png" alt="T. Chengappa"><br>
+        <h1>T. CHENGAPPA</h1>
+        <p>Senior Technical Superintendent | Department of Physics, IIT Hyderabad</p>
+      </td>
+    </tr>
 
-    <!-- 2. Contact Info -->
-    <div class="card card-contact">
-      <h2 class="heading-contact">Contact Details</h2>
-      <p><strong>Position:</strong> Senior Technical Superintendent</p>
-      <p><strong>Department:</strong> Department of Physics</p>
-      <p><strong>Institute:</strong> Indian Institute of Technology Hyderabad</p>
-      <p><strong>E-mail:</strong> <a href="mailto:chengappa.thumisi@phy.iith.ac.in" class="email-link">chengappa.thumisi@phy.iith.ac.in</a></p>
-    </div>
+    <!-- Contact Row -->
+    <tr>
+      <td class="section-title">Contact</td>
+      <td>
+        <p><strong>Department:</strong> Department of Physics</p>
+        <p><strong>Institute:</strong> Indian Institute of Technology Hyderabad</p>
+        <p><strong>E-mail:</strong> <a href="mailto:chengappa.thumisi@phy.iith.ac.in">chengappa.thumisi@phy.iith.ac.in</a></p>
+      </td>
+    </tr>
 
-    <!-- 3. Technical Expertise -->
-    <div class="card card-tech">
-      <h2 class="heading-tech">Technical Expertise</h2>
-      <ul class="item-list item-list-tech">
-        <li>Nanotechnology &amp; Advanced Instrumentation</li>
-        <li>Optics &amp; Laser Systems Operations</li>
-        <li>Metrology &amp; Surface Profilometry</li>
-        <li>Spectroscopic Analysis &amp; Data Fitting</li>
-      </ul>
-    </div>
+    <!-- Technical Expertise Row -->
+    <tr>
+      <td class="section-title">Technical Expertise</td>
+      <td>
+        <ul>
+          <li>Nanotechnology &amp; Advanced Instrumentation</li>
+          <li>Optics &amp; Laser Systems Operations</li>
+          <li>Metrology &amp; Surface Profilometry</li>
+          <li>Spectroscopic Analysis &amp; Data Fitting</li>
+        </ul>
+      </td>
+    </tr>
 
-    <!-- 4. Research Facilities -->
-    <div class="card card-research">
-      <h2 class="heading-research">Research Facilities</h2>
-      <ul class="item-list item-list-research">
-        <li>Multimodal Scanning Probe Microscope (AFM)</li>
-        <li>Ultra High Sensitive Magneto Optic Kerr Effect (MOKE) Magnetometer</li>
-        <li>Zeta 3D Optical Profilometer and Metrology</li>
-        <li>Fourier Transform Infrared Spectrometer (FTIR)</li>
-      </ul>
-    </div>
+    <!-- Research Facilities Row -->
+    <tr>
+      <td class="section-title">Research Facilities</td>
+      <td>
+        <ul>
+          <li>Multimodal Scanning Probe Microscope (AFM)</li>
+          <li>Ultra High Sensitive Magneto Optic Kerr Effect (MOKE) Magnetometer</li>
+          <li>Zeta 3D Optical Profilometer and Metrology</li>
+          <li>Fourier Transform Infrared Spectrometer (FTIR)</li>
+        </ul>
+      </td>
+    </tr>
 
-    <!-- 5. Education -->
-    <div class="card card-edu">
-      <h2 class="heading-edu">Education</h2>
-      <ul class="item-list item-list-edu">
-        <li><strong>Ph.D. Physics (Pursuing)</strong> – Experimental Condensed Matter Physics, IIT Hyderabad</li>
-        <li><strong>M.Sc. Physics</strong> – Sri Venkateswara University, Tirupati, Andhra Pradesh</li>
-        <li><strong>B.Sc. Physics</strong> – Sri Venkateswara University, Tirupati, Andhra Pradesh</li>
-        <li><strong>H.S.E. (M.P.C)</strong> – Board of Intermediate Education, Andhra Pradesh</li>
-        <li><strong>S.S.C. (M.P.C)</strong> – Board of Secondary Education, Andhra Pradesh</li>
-      </ul>
-    </div>
+    <!-- Education Row -->
+    <tr>
+      <td class="section-title">Education</td>
+      <td>
+        <ul>
+          <li><strong>Ph.D. Physics (Pursuing):</strong> Experimental Condensed Matter Physics, IIT Hyderabad</li>
+          <li><strong>M.Sc. Physics:</strong> Sri Venkateswara University, Tirupati, Andhra Pradesh</li>
+          <li><strong>B.Sc. Physics:</strong> Sri Venkateswara University, Tirupati, Andhra Pradesh</li>
+          <li><strong>H.S.E. (M.P.C):</strong> Board of Intermediate Education, Andhra Pradesh</li>
+          <li><strong>S.S.C. (M.P.C):</strong> Board of Secondary Education, Andhra Pradesh</li>
+        </ul>
+      </td>
+    </tr>
 
-    <!-- 6. Experience -->
-    <div class="card card-exp">
-      <h2 class="heading-exp">Experience</h2>
-      <ul class="item-list item-list-exp">
-        <li><strong>Senior Technical Superintendent</strong> – Department of Physics, IIT Hyderabad</li>
-        <li>Management of Central Instrumentation &amp; SPM Facilities</li>
-        <li>Technical Consultation &amp; User Training for Advanced Profilometry &amp; MOKE</li>
-        <li>Laboratory Safety &amp; Laser Facility Supervision</li>
-      </ul>
-    </div>
+    <!-- Experience Row -->
+    <tr>
+      <td class="section-title">Experience</td>
+      <td>
+        <ul>
+          <li><strong>Senior Technical Superintendent:</strong> Dept. of Physics, IIT Hyderabad</li>
+          <li>Management of Central Instrumentation &amp; SPM Facilities</li>
+          <li>Technical Consultation &amp; User Training for Advanced Profilometry &amp; MOKE</li>
+          <li>Laboratory Safety &amp; Laser Facility Supervision</li>
+        </ul>
+      </td>
+    </tr>
 
-    <!-- 7. Conferences -->
-    <div class="card card-conf">
-      <h2 class="heading-conf">Conferences</h2>
-      <ul class="item-list item-list-conf">
-        <li>International Conference on Spintronics &amp; Magnetic Materials</li>
-        <li>National Symposium on Advanced SPM Techniques &amp; Metrology</li>
-        <li>IIT Hyderabad Condensed Matter Physics Workshops</li>
-        <li>Technical Expo on Optical Metrology &amp; Thin Film Analytics</li>
-      </ul>
-    </div>
+    <!-- Conferences Row -->
+    <tr>
+      <td class="section-title">Conferences</td>
+      <td>
+        <ul>
+          <li>International Conference on Spintronics &amp; Magnetic Materials</li>
+          <li>National Symposium on Advanced SPM Techniques &amp; Metrology</li>
+          <li>IIT Hyderabad Condensed Matter Physics Workshops</li>
+          <li>Technical Expo on Optical Metrology &amp; Thin Film Analytics</li>
+        </ul>
+      </td>
+    </tr>
 
-    <!-- 8. Innovative Ideas -->
-    <div class="card card-idea">
-      <h2 class="heading-idea">Innovative Ideas</h2>
-      <ul class="item-list item-list-idea">
-        <li>Automation of Micromagnetic Parameter Calculations via Web Calculators</li>
-        <li>GNN Integration for 3D Microstructure Analysis in Digital Rock CT Scans</li>
-        <li>Low-Noise MOKE Alignment Prototypes for High-Sensitivity Measurements</li>
-        <li>Interactive Educational Hubs for Advanced Physics Instrumentation</li>
-      </ul>
-    </div>
-
-  </div>
+    <!-- Innovative Ideas Row -->
+    <tr>
+      <td class="section-title">Innovative Ideas</td>
+      <td>
+        <ul>
+          <li>Automation of Micromagnetic Parameter Calculations via Web Calculators</li>
+          <li>GNN Integration for 3D Microstructure Analysis in Digital Rock CT Scans</li>
+          <li>Low-Noise MOKE Alignment Prototypes for High-Sensitivity Measurements</li>
+          <li>Interactive Educational Hubs for Advanced Physics Instrumentation</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
 
 </body>
 </html>
