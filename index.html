@@ -5,300 +5,215 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>T. CHENGAPPA - Academic Profile</title>
   <style>
-    :root {
-      --primary: #1e293b;
-      --accent: #2563eb;
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --text: #334155;
-      --text-muted: #64748b;
-      --border: #e2e8f0;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.45;
-      padding: 20px 15px; /* Reduced body padding */
+      background-color: #ffffff;
+      color: #000000;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 12pt;
+      line-height: 1.3;
+      margin: 20px;
     }
 
-    .container {
-      max-width: 900px;
+    .main-container {
+      width: 100%;
+      max-width: 800px;
       margin: 0 auto;
     }
 
-    /* Header Profile Card */
-    .profile-card {
-      background: var(--card-bg);
-      border-radius: 10px;
-      padding: 18px 24px; /* Reduced padding */
-      display: flex;
-      align-items: center;
-      gap: 20px; /* Reduced gap */
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-      border: 1px solid var(--border);
-      margin-bottom: 12px; /* Reduced space below header */
+    /* Header Styling */
+    .profile-header {
+      text-align: center;
+      margin-bottom: 10px;
     }
 
-    .profile-img {
-      width: 150px;
-      height: 180px;
-      border-radius: 6px;
-      object-fit: cover;
-      border: 1px solid var(--border);
-      flex-shrink: 0;
-    }
-
-    .profile-info h1 {
-      font-size: 1.6rem;
-      color: var(--primary);
-      margin-bottom: 2px;
-      letter-spacing: -0.5px;
-    }
-
-    .profile-info .title {
-      font-size: 1rem;
-      color: var(--accent);
-      font-weight: 600;
+    .profile-header img {
+      width: 110px;
+      height: 135px;
+      border: 1px solid #000000;
       margin-bottom: 6px;
     }
 
-    .profile-info p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
+    .profile-header h1 {
+      font-size: 16pt;
+      font-weight: bold;
+      margin: 0 0 2px 0;
+      text-transform: uppercase;
+    }
+
+    .profile-header p {
+      margin: 0 0 2px 0;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #000000;
+      margin: 8px 0;
+    }
+
+    /* Section Styling */
+    .section-title {
+      font-size: 13pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: 6px;
+      margin-bottom: 4px;
+    }
+
+    ul {
+      margin: 0 0 6px 0;
+      padding-left: 20px;
+    }
+
+    li {
       margin-bottom: 2px;
     }
 
-    .profile-info a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .profile-info a:hover {
+    a {
+      color: #0000ee;
       text-decoration: underline;
     }
 
-    /* Grid Layout for Sections */
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px; /* Reduced gap between cards */
+    a:visited {
+      color: #551a8b;
     }
 
-    .card {
-      background: var(--card-bg);
-      border-radius: 10px;
-      padding: 16px 20px; /* Reduced inner padding of cards */
-      border: 1px solid var(--border);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    /* Plain Text Table for Experience */
+    .experience-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 6px;
     }
 
-    .card h2 {
-      font-size: 1.05rem;
-      color: var(--primary);
-      margin-bottom: 8px; /* Reduced margin below section headers */
-      padding-bottom: 4px; /* Reduced border padding */
-      border-bottom: 1.5px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 8px;
+    .experience-table td {
+      padding: 1px 0;
+      vertical-align: top;
+      font-size: 12pt;
     }
 
-    /* List Styling */
-    ul.styled-list {
-      list-style: none;
+    .experience-table .role {
+      text-align: left;
     }
 
-    ul.styled-list li {
-      position: relative;
-      padding-left: 16px;
-      margin-bottom: 4px; /* Reduced space between list items */
-      font-size: 0.9rem;
-    }
-
-    ul.styled-list li:last-child {
-      margin-bottom: 0;
-    }
-
-    ul.styled-list li::before {
-      content: "•";
-      color: var(--accent);
-      font-weight: bold;
-      font-size: 1.1rem;
-      position: absolute;
-      left: 0;
-      top: -2px;
-    }
-
-    /* Timeline styling for experience */
-    .timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 6px; /* Reduced space between experience items */
-    }
-
-    .timeline-item {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 4px;
-      border-bottom: 1px dashed var(--border);
-      font-size: 0.9rem;
-    }
-
-    .timeline-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .timeline-role {
-      font-weight: 600;
-      color: var(--primary);
-    }
-
-    .timeline-date {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 640px) {
-      .profile-card {
-        flex-direction: column;
-        text-align: center;
-      }
-      .timeline-item {
-        flex-direction: column;
-        gap: 1px;
-      }
+    .experience-table .year {
+      text-align: right;
+      white-space: nowrap;
+      padding-left: 10px;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    
-    <!-- Profile Header -->
-    <header class="profile-card">
-      <img src="images/CT_2026.png" alt="T. Chengappa" class="profile-img">
-      <div class="profile-info">
-        <h1>T. CHENGAPPA</h1>
-        <div class="title">Senior Technical Superintendent</div>
-        <p>Department of Physics</p>
-        <p>Indian Institute of Technology Hyderabad</p>
-        <p><strong>E-mail:</strong> <a href="mailto:chengappa.thumisi@phy.iith.ac.in">chengappa.thumisi@phy.iith.ac.in</a></p>
-      </div>
-    </header>
+  <div class="main-container">
 
-    <main class="grid">
+    <!-- Header Section -->
+    <div class="profile-header">
+      <img src="images/CT_2026.png" alt="T. Chengappa"><br>
+      <h1>T. CHENGAPPA</h1>
+      <p><b>Senior Technical Superintendent</b></p>
+      <p>Department of Physics | Indian Institute of Technology Hyderabad</p>
+      <p><b>E-mail:</b> <a href="mailto:chengappa.thumisi@phy.iith.ac.in">chengappa.thumisi@phy.iith.ac.in</a></p>
+    </div>
 
-      <!-- Technical Expertise -->
-      <section class="card">
-        <h2>Technical Expertise</h2>
-        <ul class="styled-list">
-          <li>Multimodal Scanning Probe Microscope (AFM)</li>
-          <li>Ultra High Sensitive Magneto Optic Kerr Effect (MOKE) Magnetometer</li>
-          <li>Zeta 3D Optical Profilometer and Metrology</li>
-          <li>Fourier Transform Infrared Spectrometer (FTIR)</li>
-        </ul>
-      </section>
+    <hr>
 
-      <!-- Research Areas -->
-      <section class="card">
-        <h2>Research Areas</h2>
-        <ul class="styled-list">
-          <li>Magnetism</li>
-          <li>Instrumentation</li>
-          <li>Magneto-Optic Materials</li>
-          <li>Quantum Sensors</li>
-        </ul>
-      </section>
+    <!-- Technical Expertise -->
+    <div class="section-title">Technical Expertise</div>
+    <ul>
+      <li>Multimodal Scanning Probe Microscope (AFM)</li>
+      <li>Ultra High Sensitive Magneto Optic Kerr Effect (MOKE) Magnetometer</li>
+      <li>Zeta 3D Optical Profilometer and Metrology</li>
+      <li>Fourier Transform Infrared Spectrometer (FTIR)</li>
+    </ul>
 
-      <!-- Education -->
-      <section class="card">
-        <h2>Education</h2>
-        <ul class="styled-list">
-          <li><strong>Ph.D. Physics (Pursuing):</strong> Experimental Condensed Matter Physics, IIT Hyderabad</li>
-          <li><strong>M.Sc. Physics:</strong> Sri Venkateswara University, Tirupati, Andhra Pradesh</li>
-          <li><strong>B.Sc. (M.P.C):</strong> Sri Venkateswara University, Tirupati, Andhra Pradesh</li>
-          <li><strong>H.S.E. (M.P.C):</strong> Board of Intermediate Education, Andhra Pradesh</li>
-          <li><strong>S.S.C.:</strong> Board of Secondary Education, Andhra Pradesh</li>
-        </ul>
-      </section>
+    <hr>
 
-      <!-- Professional Experience -->
-      <section class="card">
-        <h2>Professional Experience (15 Years)</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <span class="timeline-role">Senior Technical Superintendent (Dept. of Physics, IIT Hyderabad)</span>
-            <span class="timeline-date">2024 – Present</span>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-role">Technical Superintendent</span>
-            <span class="timeline-date">2020 – 2024</span>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-role">Junior Laboratory Assistant</span>
-            <span class="timeline-date">2015 – 2020</span>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-role">Senior Project Technician</span>
-            <span class="timeline-date">2014 – 2015</span>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-role">Project Technician</span>
-            <span class="timeline-date">2013 – 2014</span>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-role">Senior Project Assistant</span>
-            <span class="timeline-date">2010 – 2011</span>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-role">Project Assistant</span>
-            <span class="timeline-date">2008 – 2010</span>
-          </div>
-        </div>
-      </section>
+    <!-- Research Areas -->
+    <div class="section-title">Research Areas</div>
+    <ul>
+      <li>Magnetism</li>
+      <li>Instrumentation</li>
+      <li>Magneto-Optic Materials</li>
+      <li>Quantum Sensors</li>
+    </ul>
 
-      <!-- Conferences & Workshops -->
-      <section class="card">
-        <h2>Conferences & Workshops</h2>
-        <ul class="styled-list">
-          <li>Academy Online Elementary FDP on "Energy Conversion and Storage Devices-2021" at IIT Hyderabad.</li>
-          <li>Short-term course on Photonic materials fabrication, characterization and applications (2014), conducted by Indian Laser Association at SVU, Tirupati.</li>
-          <li>National seminar on Advanced Materials Characterization techniques (2013) conducted by Department of Physics, SVU, Tirupati.</li>
-          <li>Refresher course in Experimental Physics (2011) conducted by Department of Physics, IIT Madras.</li>
-        </ul>
-      </section>
+    <hr>
 
-      <!-- Innovative Work -->
-      <section class="card">
-        <h2>Innovative Work</h2>
-        <ul class="styled-list">
-          <li>Various modes of AFM with variation of Temperature and Magnetic field.</li>
-          <li>Wet etching technique for the preparation of sharp tips of Pt/Ir and Tungsten.</li>
-          <li>Solar water heater built with fused tube lights.</li>
-        </ul>
-      </section>
+    <!-- Education -->
+    <div class="section-title">Education</div>
+    <ul>
+      <li><b>Ph.D. Physics (Pursuing):</b> Experimental Condensed Matter Physics, IIT Hyderabad</li>
+      <li><b>M.Sc. Physics:</b> Sri Venkateswara University, Tirupati, Andhra Pradesh</li>
+      <li><b>B.Sc. (M.P.C):</b> Sri Venkateswara University, Tirupati, Andhra Pradesh</li>
+      <li><b>H.S.E. (M.P.C):</b> Board of Intermediate Education, Andhra Pradesh</li>
+      <li><b>S.S.C.:</b> Board of Secondary Education, Andhra Pradesh</li>
+    </ul>
 
-      <!-- Acknowledgements in Publications -->
-      <section class="card">
-        <h2>Acknowledgements in Publications</h2>
-        <ul class="styled-list">
-          <li><strong>Royal Society of Chemistry:</strong> <a href="https://doi.org/10.1039/d5nj02842f" target="_blank">Enhanced in vitro aggregation, but not phase separation, of TDP-43 and its C-terminal fragments generates intrinsic deep-blue autofluorescence</a></li>
-          <li>In silico and in vitro studies suggest epigallocatechin gallate (EGCG), a polyphenol in green tea, can bind and modulate the aggregation and cytotoxicity of the full-length TDP-43 protein implicated in TDP-43 proteinopathies.</li>
-          <li>Modulation of <em>Saccharomyces cerevisiae</em> Stm1_N1-113 and human Aβ42 amyloid fibril morphology by 3,3’-(acridine-4,5-diylbis(methylene))bis(1-(carboxymethyl)-1H-benzimidazolium) dibromide.</li>
-        </ul>
-      </section>
+    <hr>
 
-    </main>
+    <!-- Experience -->
+    <div class="section-title">Experience (15 Years)</div>
+    <table class="experience-table">
+      <tr>
+        <td class="role">• <b>Senior Technical Superintendent</b>, Dept. of Physics, IIT Hyderabad</td>
+        <td class="year">2024 to present</td>
+      </tr>
+      <tr>
+        <td class="role">• <b>Technical Superintendent</b></td>
+        <td class="year">2020 to 2024</td>
+      </tr>
+      <tr>
+        <td class="role">• <b>Junior Laboratory Assistant</b></td>
+        <td class="year">2015 to 2020</td>
+      </tr>
+      <tr>
+        <td class="role">• <b>Senior Project Technician</b></td>
+        <td class="year">2014 to 2015</td>
+      </tr>
+      <tr>
+        <td class="role">• <b>Project Technician</b></td>
+        <td class="year">2013 to 2014</td>
+      </tr>
+      <tr>
+        <td class="role">• <b>Senior Project Assistant</b></td>
+        <td class="year">2010 to 2011</td>
+      </tr>
+      <tr>
+        <td class="role">• <b>Project Assistant</b></td>
+        <td class="year">2008 to 2010</td>
+      </tr>
+    </table>
+
+    <hr>
+
+    <!-- Conferences -->
+    <div class="section-title">Conferences & Workshops</div>
+    <ul>
+      <li>Academy Online Elementary FDP on "Energy Conversion and Storage Devices-2021" at Indian Institute of Technology Hyderabad.</li>
+      <li>Short-term course on Photonic materials fabrication, characterization and applications-2014 conducted by Indian Laser Association in Department of Physics, Sri Venkateswara University Tirupati, Andhra Pradesh.</li>
+      <li>National seminar on Advanced Materials Characterization techniques – 2013 conducted by Department of Physics, Sri Venkateswara University Tirupati, Andhra Pradesh.</li>
+      <li>Refresher course in Experimental Physics-2011 conducted by Department of Physics, IIT Madras.</li>
+    </ul>
+
+    <hr>
+
+    <!-- Innovative Work -->
+    <div class="section-title">Innovative Work</div>
+    <ul>
+      <li>Various modes of AFM with the variation of Temperature and Magnetic field.</li>
+      <li>Wet etching technique for the preparation of sharp tips of Pt/Ir and Tungsten.</li>
+      <li>Solar water heater with the fused tubelights.</li>
+    </ul>
+
+    <hr>
+
+    <!-- Acknowledgements -->
+    <div class="section-title">Acknowledgements in Publications</div>
+    <ul>
+      <li><b>Royal Society of Chemistry:</b> <a href="https://doi.org/10.1039/d5nj02842f">Enhanced in vitro aggregation, but not phase separation, of TDP-43 and its C-terminal fragments generates intrinsic deep-blue autofluorescence</a></li>
+      <li>In silico and in vitro studies suggest epigallocatechin gallate (EGCG), a polyphenol in green tea, can bind and modulate the aggregation and cytotoxicity of the full-length TDP-43 protein implicated in TDP-43 proteinopathies.</li>
+      <li>Modulation of <i>Saccharomyces cerevisiae</i> Stm1_N1-113 and human Aβ42 amyloid fibril morphology by 3,3’-(acridine-4,5-diylbis(methylene))bis(1-(carboxymethyl)-1H-benzimidazolium) dibromide.</li>
+    </ul>
+
   </div>
 
 </body>
