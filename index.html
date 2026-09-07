@@ -3,51 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CT </title>
+  <title>T. Chengappa - Profile</title>
   <style>
     body {
-      background-color: #ffffff;
-      color: #000000;
+      background-color: #f8f9fa;
+      color: #1a1a1a;
       font-family: "Times New Roman", Times, serif;
       font-size: 12pt;
-      line-height: 1.3;
-      margin: 20px;
+      line-height: 1.4;
+      margin: 0;
+      padding: 20px;
     }
 
     .main-container {
       width: 100%;
-      max-width: 800px;
+      max-width: 850px;
       margin: 0 auto;
+      background: #ffffff;
+      padding: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border-radius: 6px;
     }
 
     /* Header Styling */
     .profile-header {
       text-align: center;
-      margin-bottom: 10px;
-    }
-
-    .profile-header img {
-      width: 110px;
-      height: 135px;
-      border: 1px solid #000000;
-      margin-bottom: 6px;
+      margin-bottom: 20px;
     }
 
     .profile-header h1 {
-      font-size: 16pt;
+      font-size: 18pt;
       font-weight: bold;
-      margin: 0 0 2px 0;
+      margin: 0 0 4px 0;
       text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .profile-header p {
-      margin: 0 0 2px 0;
+      margin: 0 0 3px 0;
     }
 
-    hr {
+    /* Tab Navigation Bar */
+    .tab-navigation {
+      display: flex;
+      border-bottom: 2px solid #000000;
+      margin-bottom: 20px;
+    }
+
+    .tab-button {
+      background-color: transparent;
       border: none;
-      border-top: 1px solid #000000;
-      margin: 8px 0;
+      outline: none;
+      padding: 10px 16px;
+      font-family: inherit;
+      font-size: 11pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      color: #555555;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.2s ease;
+    }
+
+    .tab-button:hover {
+      color: #000000;
+      background-color: #f1f1f1;
+    }
+
+    .tab-button.active {
+      color: #000000;
+      border-bottom: 3px solid #000000;
+      background-color: #ffffff;
+    }
+
+    /* Tab Content Styling */
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
     }
 
     /* Section Styling */
@@ -55,17 +91,19 @@
       font-size: 13pt;
       font-weight: bold;
       text-transform: uppercase;
-      margin-top: 6px;
-      margin-bottom: 4px;
+      margin-top: 10px;
+      margin-bottom: 8px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid #ccc;
     }
 
     ul {
-      margin: 0 0 6px 0;
+      margin: 0 0 16px 0;
       padding-left: 20px;
     }
 
     li {
-      margin-bottom: 2px;
+      margin-bottom: 6px;
     }
 
     a {
@@ -77,17 +115,18 @@
       color: #551a8b;
     }
 
-    /* Plain Text Table for Experience */
+    /* Experience Table */
     .experience-table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 6px;
+      margin-bottom: 16px;
     }
 
     .experience-table td {
-      padding: 1px 0;
+      padding: 6px 0;
       vertical-align: top;
       font-size: 12pt;
+      border-bottom: 1px solid #f0f0f0;
     }
 
     .experience-table .role {
@@ -97,7 +136,8 @@
     .experience-table .year {
       text-align: right;
       white-space: nowrap;
-      padding-left: 10px;
+      padding-left: 15px;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -105,115 +145,152 @@
 
   <div class="main-container">
 
-    <!-- Header Section -->
+    <!-- Profile Header -->
     <div class="profile-header">
-            <h1>T. CHENGAPPA</h1>
+      <h1>T. CHENGAPPA</h1>
       <p><b>Senior Technical Superintendent</b></p>
       <p>Department of Physics | Indian Institute of Technology Hyderabad</p>
       <p><b>E-mail:</b> <a href="mailto:chengappa.thumisi@phy.iith.ac.in">chengappa.thumisi@phy.iith.ac.in</a></p>
     </div>
 
-    <hr>
+    <!-- Tab Bar -->
+    <div class="tab-navigation">
+      <button class="tab-button active" onclick="openTab(event, 'Overview')">Overview</button>
+      <button class="tab-button" onclick="openTab(event, 'Technical')">Technical & Research</button>
+      <button class="tab-button" onclick="openTab(event, 'Experience')">Education & Experience</button>
+      <button class="tab-button" onclick="openTab(event, 'Work')">Work & Publications</button>
+    </div>
 
-    <!-- Technical Expertise -->
-    <div class="section-title">Technical Expertise</div>
-    <ul>
-      <li>Multimodal Scanning Probe Microscope (AFM)</li>
-      <li>Ultra High Sensitive Magneto Optic Kerr Effect (MOKE) Magnetometer</li>
-      <li>Zeta 3D Optical Profilometer and Metrology</li>
-      <li>Fourier Transform Infrared Spectrometer (FTIR)</li>
-    </ul>
+    <!-- TAB 1: OVERVIEW -->
+    <div id="Overview" class="tab-content active">
+      <div class="section-title">Technical Expertise</div>
+      <ul>
+        <li>Multimodal Scanning Probe Microscope (AFM)</li>
+        <li>Ultra High Sensitive Magneto Optic Kerr Effect (MOKE) Magnetometer</li>
+        <li>Zeta 3D Optical Profilometer and Metrology</li>
+        <li>Fourier Transform Infrared Spectrometer (FTIR)</li>
+      </ul>
 
-    <hr>
+      <div class="section-title">Research Areas</div>
+      <ul>
+        <li>Advanced Magnetic Materials for Device Applications</li>
+        <li>Magneto-Optic Instrumentation</li>
+        <li>Magneto-Optic Materials and Characterization</li>
+        <li>Quantum Sensors</li>
+      </ul>
+    </div>
 
-    <!-- Research Areas -->
-    <div class="section-title">Research Areas</div>
-    <ul>
-      <li>Advanced Magnetic Materials for Device Applications</li>
-      <li>Magneto-Optic Instrumentation</li>
-      <li>Magneto-Optic Materials and Characterization</li>
-      <li>Quantum Sensors</li>
-    </ul>
+    <!-- TAB 2: TECHNICAL & RESEARCH -->
+    <div id="Technical" class="tab-content">
+      <div class="section-title">Technical Expertise</div>
+      <ul>
+        <li>Multimodal Scanning Probe Microscope (AFM)</li>
+        <li>Ultra High Sensitive Magneto Optic Kerr Effect (MOKE) Magnetometer</li>
+        <li>Zeta 3D Optical Profilometer and Metrology</li>
+        <li>Fourier Transform Infrared Spectrometer (FTIR)</li>
+      </ul>
 
-    <hr>
+      <div class="section-title">Research Areas</div>
+      <ul>
+        <li>Advanced Magnetic Materials for Device Applications</li>
+        <li>Magneto-Optic Instrumentation</li>
+        <li>Magneto-Optic Materials and Characterization</li>
+        <li>Quantum Sensors</li>
+      </ul>
+    </div>
 
-    <!-- Education -->
-    <div class="section-title">Education</div>
-    <ul>
-      <li><b>Ph.D. Physics (Pursuing):</b> Experimental Condensed Matter Physics, IIT Hyderabad</li>
-      <li><b>M.Sc. Physics:</b> Sri Venkateswara University, Tirupati, Andhra Pradesh</li>
-      <li><b>B.Sc. (M.P.C):</b> Sri Venkateswara University, Tirupati, Andhra Pradesh</li>
-      <li><b>H.S.E. (M.P.C):</b> Board of Intermediate Education, Andhra Pradesh</li>
-      <li><b>S.S.C.:</b> Board of Secondary Education, Andhra Pradesh</li>
-    </ul>
+    <!-- TAB 3: EDUCATION & EXPERIENCE -->
+    <div id="Experience" class="tab-content">
+      <div class="section-title">Education</div>
+      <ul>
+        <li><b>Ph.D. Physics (Pursuing):</b> Experimental Condensed Matter Physics, IIT Hyderabad</li>
+        <li><b>M.Sc. Physics:</b> Sri Venkateswara University, Tirupati, Andhra Pradesh</li>
+        <li><b>B.Sc. (M.P.C):</b> Sri Venkateswara University, Tirupati, Andhra Pradesh</li>
+        <li><b>H.S.E. (M.P.C):</b> Board of Intermediate Education, Andhra Pradesh</li>
+        <li><b>S.S.C.:</b> Board of Secondary Education, Andhra Pradesh</li>
+      </ul>
 
-    <hr>
+      <div class="section-title">Experience (More than 15 Years)</div>
+      <table class="experience-table">
+        <tr>
+          <td class="role">• <b>Senior Technical Superintendent</b>, Dept. of Physics, IIT Hyderabad</td>
+          <td class="year">2024 to present</td>
+        </tr>
+        <tr>
+          <td class="role">• <b>Technical Superintendent</b></td>
+          <td class="year">2020 to 2024</td>
+        </tr>
+        <tr>
+          <td class="role">• <b>Junior Laboratory Assistant</b></td>
+          <td class="year">2015 to 2020</td>
+        </tr>
+        <tr>
+          <td class="role">• <b>Senior Project Technician</b></td>
+          <td class="year">2014 to 2015</td>
+        </tr>
+        <tr>
+          <td class="role">• <b>Project Technician</b></td>
+          <td class="year">2013 to 2014</td>
+        </tr>
+        <tr>
+          <td class="role">• <b>Senior Project Assistant</b></td>
+          <td class="year">2010 to 2011</td>
+        </tr>
+        <tr>
+          <td class="role">• <b>Project Assistant</b></td>
+          <td class="year">2008 to 2010</td>
+        </tr>
+      </table>
+    </div>
 
-    <!-- Experience -->
-    <div class="section-title">Experience (More than 15 Years)</div>
-    <table class="experience-table">
-      <tr>
-        <td class="role">• <b>Senior Technical Superintendent</b>, Dept. of Physics, IIT Hyderabad</td>
-        <td class="year">2024 to present</td>
-      </tr>
-      <tr>
-        <td class="role">• <b>Technical Superintendent</b></td>
-        <td class="year">2020 to 2024</td>
-      </tr>
-      <tr>
-        <td class="role">• <b>Junior Laboratory Assistant</b></td>
-        <td class="year">2015 to 2020</td>
-      </tr>
-      <tr>
-        <td class="role">• <b>Senior Project Technician</b></td>
-        <td class="year">2014 to 2015</td>
-      </tr>
-      <tr>
-        <td class="role">• <b>Project Technician</b></td>
-        <td class="year">2013 to 2014</td>
-      </tr>
-      <tr>
-        <td class="role">• <b>Senior Project Assistant</b></td>
-        <td class="year">2010 to 2011</td>
-      </tr>
-      <tr>
-        <td class="role">• <b>Project Assistant</b></td>
-        <td class="year">2008 to 2010</td>
-      </tr>
-    </table>
+    <!-- TAB 4: WORK & ACHIEVEMENTS -->
+    <div id="Work" class="tab-content">
+      <div class="section-title">Innovative Work</div>
+      <ul>
+        <li>Various modes of AFM with the variation of Temperature and Magnetic field.</li>
+        <li>Wet etching technique for the preparation of sharp tips of Pt/Ir and Tungsten.</li>
+        <li>Solar water heater with the fused tubelights.</li>
+      </ul>
 
-    <hr>
+      <div class="section-title">Conferences & Workshops</div>
+      <ul>
+        <li>Academy Online Elementary FDP on "Energy Conversion and Storage Devices-2021" at Indian Institute of Technology Hyderabad.</li>
+        <li>Short-term course on Photonic materials fabrication, characterization and applications-2014 conducted by Indian Laser Association in Department of Physics, Sri Venkateswara University Tirupati, Andhra Pradesh.</li>
+        <li>National seminar on Advanced Materials Characterization techniques – 2013 conducted by Department of Physics, Sri Venkateswara University Tirupati, Andhra Pradesh.</li>
+        <li>Refresher course in Experimental Physics-2011 conducted by Department of Physics, IIT Madras.</li>
+      </ul>
 
-    <!-- Conferences -->
-    <div class="section-title">Conferences & Workshops</div>
-    <ul>
-      <li>Academy Online Elementary FDP on "Energy Conversion and Storage Devices-2021" at Indian Institute of Technology Hyderabad.</li>
-      <li>Short-term course on Photonic materials fabrication, characterization and applications-2014 conducted by Indian Laser Association in Department of Physics, Sri Venkateswara University Tirupati, Andhra Pradesh.</li>
-      <li>National seminar on Advanced Materials Characterization techniques – 2013 conducted by Department of Physics, Sri Venkateswara University Tirupati, Andhra Pradesh.</li>
-      <li>Refresher course in Experimental Physics-2011 conducted by Department of Physics, IIT Madras.</li>
-    </ul>
-
-    <hr>
-
-    <!-- Innovative Work -->
-    <div class="section-title">Innovative Work</div>
-    <ul>
-      <li>Various modes of AFM with the variation of Temperature and Magnetic field.</li>
-      <li>Wet etching technique for the preparation of sharp tips of Pt/Ir and Tungsten.</li>
-      <li>Solar water heater with the fused tubelights.</li>
-    </ul>
-
-    <hr>
-
-    <!-- Acknowledgements -->
-    <div class="section-title">Acknowledgements in Publications</div>
-    <ul>
-      <li><b>Royal Society of Chemistry:</b> <a href="https://doi.org/10.1039/d5nj02842f">Enhanced in vitro aggregation, but not phase separation, of TDP-43 and its C-terminal fragments generates intrinsic deep-blue autofluorescence</a></li>
-      <li>In silico and in vitro studies suggest epigallocatechin gallate (EGCG), a polyphenol in green tea, can bind and modulate the aggregation and cytotoxicity of the full-length TDP-43 protein implicated in TDP-43 proteinopathies.</li>
-      <li>Modulation of <i>Saccharomyces cerevisiae</i> Stm1_N1-113 and human Aβ42 amyloid fibril morphology by 3,3’-(acridine-4,5-diylbis(methylene))bis(1-(carboxymethyl)-1H-benzimidazolium) dibromide.</li>
-    </ul>
+      <div class="section-title">Acknowledgements in Publications</div>
+      <ul>
+        <li><b>Royal Society of Chemistry:</b> <a href="https://doi.org/10.1039/d5nj02842f" target="_blank">Enhanced in vitro aggregation, but not phase separation, of TDP-43 and its C-terminal fragments generates intrinsic deep-blue autofluorescence</a></li>
+        <li>In silico and in vitro studies suggest epigallocatechin gallate (EGCG), a polyphenol in green tea, can bind and modulate the aggregation and cytotoxicity of the full-length TDP-43 protein implicated in TDP-43 proteinopathies.</li>
+        <li>Modulation of <i>Saccharomyces cerevisiae</i> Stm1_N1-113 and human Aβ42 amyloid fibril morphology by 3,3’-(acridine-4,5-diylbis(methylene))bis(1-(carboxymethyl)-1H-benzimidazolium) dibromide.</li>
+      </ul>
+    </div>
 
   </div>
+
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tabbuttons;
+      
+      // Hide all tab content
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+      }
+
+      // Remove "active" class from all tab buttons
+      tabbuttons = document.getElementsByClassName("tab-button");
+      for (i = 0; i < tabbuttons.length; i++) {
+        tabbuttons[i].classList.remove("active");
+      }
+
+      // Show the current tab and mark button as active
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+  </script>
 
 </body>
 </html>
