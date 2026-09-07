@@ -46,7 +46,7 @@
     /* Tab Navigation Bar */
     .tab-navigation {
       display: flex;
-      border-bottom: 2px solid #000000;
+      border-bottom: 2px solid #ddd;
       margin-bottom: 20px;
     }
 
@@ -67,14 +67,32 @@
     }
 
     .tab-button:hover {
-      color: #000000;
       background-color: #f1f1f1;
     }
 
-    .tab-button.active {
-      color: #000000;
-      border-bottom: 3px solid #000000;
-      background-color: #ffffff;
+    /* Individual Custom Colors for Active Tabs */
+    .tab-button[data-tab="Overview"].active {
+      color: #1b365d; /* Navy Blue */
+      border-bottom: 3px solid #1b365d;
+      background-color: #f0f4f8;
+    }
+
+    .tab-button[data-tab="Technical"].active {
+      color: #006666; /* Teal / Dark Cyan */
+      border-bottom: 3px solid #006666;
+      background-color: #e6f2f2;
+    }
+
+    .tab-button[data-tab="Experience"].active {
+      color: #8b0000; /* Dark Red / Crimson */
+      border-bottom: 3px solid #8b0000;
+      background-color: #f9ebeb;
+    }
+
+    .tab-button[data-tab="Work"].active {
+      color: #4b0082; /* Indigo / Dark Purple */
+      border-bottom: 3px solid #4b0082;
+      background-color: #f3eafa;
     }
 
     /* Tab Content Styling */
@@ -155,10 +173,10 @@
 
     <!-- Tab Bar -->
     <div class="tab-navigation">
-      <button class="tab-button active" onclick="openTab(event, 'Overview')">Overview</button>
-      <button class="tab-button" onclick="openTab(event, 'Technical')">Technical & Research</button>
-      <button class="tab-button" onclick="openTab(event, 'Experience')">Education & Experience</button>
-      <button class="tab-button" onclick="openTab(event, 'Work')">Work & Publications</button>
+      <button class="tab-button active" data-tab="Overview" onclick="openTab(event, 'Overview')">Overview</button>
+      <button class="tab-button" data-tab="Technical" onclick="openTab(event, 'Technical')">Technical & Research</button>
+      <button class="tab-button" data-tab="Experience" onclick="openTab(event, 'Experience')">Education & Experience</button>
+      <button class="tab-button" data-tab="Work" onclick="openTab(event, 'Work')">Work & Publications</button>
     </div>
 
     <!-- TAB 1: OVERVIEW -->
@@ -286,7 +304,7 @@
         tabbuttons[i].classList.remove("active");
       }
 
-      // Show the current tab and mark button as active
+      // Show current tab & activate selected button
       document.getElementById(tabName).classList.add("active");
       evt.currentTarget.classList.add("active");
     }
