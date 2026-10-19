@@ -1,8 +1,219 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T. Chengappa </title>
+  <style>
+    /* Reset & Global Font Settings */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7f9;
+      color: #2c3e50;
+      line-height: 1.6;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Main Container Card */
+    .profile-card {
+      background: #ffffff;
+      max-width: 800px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      padding: 40px;
+    }
+
+    /* Header Section (Profile + Basic Info) */
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      border-bottom: 2px solid #edf2f7;
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+    }
+
+    .profile-img {
+      width: 180px;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      border: 3px solid #ffffff;
+    }
+
+    .header-details h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1a202c;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+
+    .header-details h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #0056b3;
+      margin-bottom: 4px;
+    }
+
+    .header-details h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #4a5568;
+      margin-bottom: 12px;
+    }
+
+    .email-link {
+      display: inline-block;
+      font-size: 0.95rem;
+      color: #0056b3;
+      text-decoration: none;
+      background-color: #ebf8ff;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .email-link:hover {
+      background-color: #bee3f8;
+      color: #2b6cb0;
+    }
+
+    /* Content Sections */
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #2d3748;
+      margin-top: 25px;
+      margin-bottom: 15px;
+      position: relative;
+      padding-bottom: 6px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      height: 3px;
+      background-color: #0056b3;
+      border-radius: 2px;
+    }
+
+    /* Custom Stylish Lists */
+    .styled-list {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .styled-list li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      color: #4a5568;
+      font-size: 0.98rem;
+    }
+
+    .styled-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #0056b3;
+      font-size: 1.3rem;
+      line-height: 1;
+      top: 0;
+    }
+
+    /* Responsive Design for Mobile Devices */
+    @media (max-width: 640px) {
+      .profile-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+      
+      .section-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .profile-card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
 <body>
-  <img src="images/CT 2026 web.png
-" alt="CT" style="width:220px;height:250px;">
+
+  <div class="profile-card">
+    <!-- Header / Basic Info -->
+    <div class="profile-header">
+      <img src="images/CT 2026 web.png" alt="T. Chengappa" class="profile-img">
+      <div class="header-details">
+        <h1>T. CHENGAPPA</h1>
+        <h2>Senior Technical Superintendent</h2>
+        <h3>Indian Institute of Technology Hyderabad</h3>
+        <a href="mailto:chengappa.thumisi@phy.iith.ac.in" class="email-link">
+          ✉ chengappa.thumisi@phy.iith.ac.in
+        </a>
+      </div>
+    </div>
+
+    <!-- Research Areas -->
+    <h2 class="section-title">Research Areas</h2>
+    <ul class="styled-list">
+      <li>Magnetism</li>
+      <li>Instrumentation</li>
+    </ul>
+
+    <!-- Technical Expertise -->
+    <h2 class="section-title">Technical Expertise</h2>
+    <ul class="styled-list">
+      <li>Multimodal Scanning Probe Microscope (AFM)</li>
+      <li>Ultra High Sensitive MOKE Magnetometer</li>
+      <li>Zeta 3D Optical Profilometer</li>
+      <li>Fourier Transform Infrared Spectrometer (FTIR)</li>
+    </ul>
+
+    <!-- Professional Experience -->
+    <h2 class="section-title">Professional Experience</h2>
+    <ul class="styled-list">
+      <li>Senior Technical Superintendent (2024 to present)</li>
+      <li>Technical Superintendent (2020 to 2024)</li>
+      <li>Junior Laboratory Assistant (2015 to 2020)</li>
+      <li>Senior Project Technician (2014 to 2015)</li>
+      <li>Project Technician (2013 to 2014)</li>
+      <li>Senior Project Assistant (2010 to 2011)</li>
+      <li>Project Assistant (2008 to 2010)</li>
+    </ul>
+
+    <!-- Education -->
+    <h2 class="section-title">Education</h2>
+    <ul class="styled-list">
+      <li>Ph.D. in Physics (Pursuing)</li>
+      <li>M.Sc. in Physics (Specialized in Condensed Matter Physics)</li>
+      <li>B.Sc. (Maths, Physics and Chemistry)</li>
+      <li>H.S.E. (Maths, Physics and Chemistry)</li>
+    </ul>
+  </div>
+
+</body>
+</html>
   
   <h2 style="margin-bottom: 0;">T. CHENGAPPA</h2>
   <h3 style="margin-top: 0; margin-bottom: 0;">Senior Technical Superintendent</h3>
