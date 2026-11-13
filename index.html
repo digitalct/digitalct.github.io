@@ -1,217 +1,175 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>T. Chengappa - Profile</title>
-  <style>
-    /* Reset & Global Font Settings */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research Resources - Useful Websites</title>
 
+<style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f7f9;
-      color: #2c3e50;
-      line-height: 1.6;
-      padding: 40px 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+        font-family: Arial, sans-serif;
+        font-size: 11pt;
+        color: #000000;
+        background-color: #ffffff;
+        margin: 30px;
+        line-height: 1.5;
     }
 
-    /* Main Container Card */
-    .profile-card {
-      background: #ffffff;
-      max-width: 800px;
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      overflow: hidden;
-      padding: 40px;
-    }
-
-    /* Header Section (Profile + Basic Info) */
-    .profile-header {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      border-bottom: 2px solid #edf2f7;
-      padding-bottom: 30px;
-      margin-bottom: 30px;
-    }
-
-    .profile-img {
-      width: 180px;
-      height: 210px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-      border: 3px solid #ffffff;
-    }
-
-    .header-details h1 {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #1a202c;
-      letter-spacing: -0.5px;
-      margin-bottom: 6px;
-    }
-
-    .header-details h2 {
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: #0056b3;
-      margin-bottom: 4px;
-    }
-
-    .header-details h3 {
-      font-size: 1rem;
-      font-weight: 500;
-      color: #4a5568;
-      margin-bottom: 12px;
-    }
-
-    .email-link {
-      display: inline-block;
-      font-size: 0.95rem;
-      color: #0056b3;
-      text-decoration: none;
-      background-color: #ebf8ff;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-weight: 500;
-      transition: all 0.2s ease;
-    }
-
-    .email-link:hover {
-      background-color: #bee3f8;
-      color: #2b6cb0;
-    }
-
-    /* Content Sections */
-    .section-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: #2d3748;
-      margin-top: 25px;
-      margin-bottom: 15px;
-      position: relative;
-      padding-bottom: 6px;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 40px;
-      height: 3px;
-      background-color: #0056b3;
-      border-radius: 2px;
-    }
-
-    /* Custom Stylish Lists */
-    .styled-list {
-      list-style: none;
-      margin-bottom: 20px;
-    }
-
-    .styled-list li {
-      position: relative;
-      padding-left: 20px;
-      margin-bottom: 8px;
-      color: #4a5568;
-      font-size: 0.98rem;
-    }
-
-    .styled-list li::before {
-      content: '•';
-      position: absolute;
-      left: 0;
-      color: #0056b3;
-      font-size: 1.3rem;
-      line-height: 1;
-      top: 0;
-    }
-
-    /* Responsive Design for Mobile Devices */
-    @media (max-width: 640px) {
-      .profile-header {
-        flex-direction: column;
+    h1 {
+        font-size: 20pt;
         text-align: center;
-        gap: 20px;
-      }
-      
-      .section-title::after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      .profile-card {
-        padding: 24px;
-      }
+        margin-bottom: 5px;
     }
-  </style>
+
+    h2 {
+        font-size: 13pt;
+        color: #004d66;
+        border-bottom: 1px solid #999999;
+        padding-bottom: 4px;
+        margin-top: 25px;
+    }
+
+    p.subtitle {
+        text-align: center;
+        color: #555555;
+        margin-bottom: 25px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 15px;
+    }
+
+    th, td {
+        border: 1px solid #cccccc;
+        padding: 6px 9px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #eeeeee;
+    }
+
+    a {
+        color: #0056a3;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .footer {
+        margin-top: 30px;
+        padding-top: 10px;
+        border-top: 1px solid #cccccc;
+        text-align: center;
+        font-size: 9pt;
+        color: #666666;
+    }
+
+    @media print {
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    }
+</style>
 </head>
+
 <body>
 
-  <div class="profile-card">
-    <!-- Header / Basic Info -->
-    <div class="profile-header">
-      <img src="images/CT 2026 web.png" alt="T. Chengappa" class="profile-img">
-      <div class="header-details">
-        <h1>T. CHENGAPPA</h1>
-        <h2>Senior Technical Superintendent</h2>
-        <h3>Indian Institute of Technology Hyderabad</h3>
-        <a href="mailto:chengappa.thumisi@phy.iith.ac.in" class="email-link">
-          ✉ chengappa.thumisi@phy.iith.ac.in
-        </a>
-      </div>
-    </div>
+<h1>RESEARCH RESOURCES</h1>
+<p class="subtitle">
+Useful Websites for Researchers, Scholars and Academicians
+</p>
 
-    <!-- Research Areas -->
-    <h2 class="section-title">Research Areas</h2>
-    <ul class="styled-list">
-      <li>Magnetism</li>
-      <li>Instrumentation</li>
-    </ul>
+<h2>1. Free Academic Books and E-Books</h2>
+<table>
+<tr><th>Website</th><th>URL</th><th>Resources</th></tr>
+<tr><td>Project Gutenberg</td><td><a href="https://www.gutenberg.org/">gutenberg.org</a></td><td>Free e-books</td></tr>
+<tr><td>Internet Archive</td><td><a href="https://archive.org/details/texts">archive.org</a></td><td>Books and archives</td></tr>
+<tr><td>Open Library</td><td><a href="https://openlibrary.org/">openlibrary.org</a></td><td>Online book lending</td></tr>
+<tr><td>Directory of Open Access Books</td><td><a href="https://www.doabooks.org/">doabooks.org</a></td><td>Academic books</td></tr>
+<tr><td>OAPEN Library</td><td><a href="https://www.oapen.org/">oapen.org</a></td><td>Open-access books</td></tr>
+<tr><td>OpenStax</td><td><a href="https://openstax.org/">openstax.org</a></td><td>University textbooks</td></tr>
+<tr><td>Open Textbook Library</td><td><a href="https://open.umn.edu/opentextbooks">open.umn.edu</a></td><td>Free textbooks</td></tr>
+<tr><td>IntechOpen</td><td><a href="https://www.intechopen.com/">intechopen.com</a></td><td>Scientific books</td></tr>
+<tr><td>Free Book Centre</td><td><a href="https://www.freebookcentre.net/">freebookcentre.net</a></td><td>Science and engineering books</td></tr>
+</table>
 
-    <!-- Technical Expertise -->
-    <h2 class="section-title">Technical Expertise</h2>
-    <ul class="styled-list">
-      <li>Multimodal Scanning Probe Microscope (AFM)</li>
-      <li>Ultra High Sensitive MOKE Magnetometer</li>
-      <li>Zeta 3D Optical Profilometer</li>
-      <li>Fourier Transform Infrared Spectrometer (FTIR)</li>
-    </ul>
+<h2>2. Research Papers and Scientific Publications</h2>
+<table>
+<tr><th>Website</th><th>URL</th><th>Resources</th></tr>
+<tr><td>Google Scholar</td><td><a href="https://scholar.google.com/">scholar.google.com</a></td><td>Research papers and citations</td></tr>
+<tr><td>arXiv</td><td><a href="https://arxiv.org/">arxiv.org</a></td><td>Physics and scientific preprints</td></tr>
+<tr><td>Semantic Scholar</td><td><a href="https://www.semanticscholar.org/">semanticscholar.org</a></td><td>Research literature</td></tr>
+<tr><td>CORE</td><td><a href="https://core.ac.uk/">core.ac.uk</a></td><td>Open-access research papers</td></tr>
+<tr><td>DOAJ</td><td><a href="https://doaj.org/">doaj.org</a></td><td>Open-access journals</td></tr>
+<tr><td>PubMed</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/">pubmed.ncbi.nlm.nih.gov</a></td><td>Biomedical literature</td></tr>
+<tr><td>Europe PMC</td><td><a href="https://europepmc.org/">europepmc.org</a></td><td>Life sciences publications</td></tr>
+<tr><td>OpenAlex</td><td><a href="https://openalex.org/">openalex.org</a></td><td>Research discovery database</td></tr>
+<tr><td>Crossref</td><td><a href="https://www.crossref.org/">crossref.org</a></td><td>DOI and publication metadata</td></tr>
+<tr><td>Zenodo</td><td><a href="https://zenodo.org/">zenodo.org</a></td><td>Research datasets and publications</td></tr>
+</table>
 
-    <!-- Professional Experience -->
-    <h2 class="section-title">Professional Experience</h2>
-    <ul class="styled-list">
-      <li>Senior Technical Superintendent (2024 to present)</li>
-      <li>Technical Superintendent (2020 to 2024)</li>
-      <li>Junior Laboratory Assistant (2015 to 2020)</li>
-      <li>Senior Project Technician (2014 to 2015)</li>
-      <li>Project Technician (2013 to 2014)</li>
-      <li>Senior Project Assistant (2010 to 2011)</li>
-      <li>Project Assistant (2008 to 2010)</li>
-    </ul>
+<h2>3. Physics and Materials Science</h2>
+<table>
+<tr><th>Website</th><th>URL</th><th>Resources</th></tr>
+<tr><td>APS</td><td><a href="https://journals.aps.org/">journals.aps.org</a></td><td>Physical Review journals</td></tr>
+<tr><td>IOPscience</td><td><a href="https://iopscience.iop.org/">iopscience.iop.org</a></td><td>Physics journals</td></tr>
+<tr><td>AIP Publishing</td><td><a href="https://pubs.aip.org/">pubs.aip.org</a></td><td>Applied Physics research</td></tr>
+<tr><td>Physical Review X</td><td><a href="https://journals.aps.org/prx/">journals.aps.org/prx</a></td><td>Advanced Physics research</td></tr>
+<tr><td>Materials Project</td><td><a href="https://materialsproject.org/">materialsproject.org</a></td><td>Materials databases</td></tr>
+<tr><td>AFLOW</td><td><a href="https://aflow.org/">aflow.org</a></td><td>Computational materials science</td></tr>
+<tr><td>Springer Nature</td><td><a href="https://link.springer.com/">link.springer.com</a></td><td>Books and journals</td></tr>
+<tr><td>ScienceDirect</td><td><a href="https://www.sciencedirect.com/">sciencedirect.com</a></td><td>Scientific publications</td></tr>
+<tr><td>Wiley Online Library</td><td><a href="https://onlinelibrary.wiley.com/">onlinelibrary.wiley.com</a></td><td>Scientific journals</td></tr>
+</table>
 
-    <!-- Education -->
-    <h2 class="section-title">Education</h2>
-    <ul class="styled-list">
-      <li>Ph.D. in Physics (Pursuing)</li>
-      <li>M.Sc. in Physics (Specialized in Condensed Matter Physics)</li>
-      <li>B.Sc. (Maths, Physics and Chemistry)</li>
-      <li>H.S.E. (Maths, Physics and Chemistry)</li>
-    </ul>
-  </div>
+<h2>4. Indian Research Resources</h2>
+<table>
+<tr><th>Website</th><th>URL</th><th>Resources</th></tr>
+<tr><td>Shodhganga</td><td><a href="https://shodhganga.inflibnet.ac.in/">shodhganga.inflibnet.ac.in</a></td><td>Indian PhD theses</td></tr>
+<tr><td>NDLI</td><td><a href="https://ndl.iitkgp.ac.in/">ndl.iitkgp.ac.in</a></td><td>National Digital Library</td></tr>
+<tr><td>INFLIBNET</td><td><a href="https://inflibnet.ac.in/">inflibnet.ac.in</a></td><td>Academic library resources</td></tr>
+<tr><td>e-PG Pathshala</td><td><a href="https://epgp.inflibnet.ac.in/">epgp.inflibnet.ac.in</a></td><td>Postgraduate learning materials</td></tr>
+<tr><td>VIDWAN</td><td><a href="https://vidwan.inflibnet.ac.in/">vidwan.inflibnet.ac.in</a></td><td>Indian researcher profiles</td></tr>
+<tr><td>Indian Academy of Sciences</td><td><a href="https://www.ias.ac.in/">ias.ac.in</a></td><td>Scientific publications</td></tr>
+<tr><td>CSIR</td><td><a href="https://www.csir.res.in/">csir.res.in</a></td><td>Scientific research</td></tr>
+</table>
+
+<h2>5. Research Tools and Reference Management</h2>
+<table>
+<tr><th>Website</th><th>URL</th><th>Resources</th></tr>
+<tr><td>Zotero</td><td><a href="https://www.zotero.org/">zotero.org</a></td><td>Reference management</td></tr>
+<tr><td>Mendeley</td><td><a href="https://www.mendeley.com/">mendeley.com</a></td><td>Reference management</td></tr>
+<tr><td>ORCID</td><td><a href="https://orcid.org/">orcid.org</a></td><td>Researcher identification</td></tr>
+<tr><td>ResearchGate</td><td><a href="https://www.researchgate.net/">researchgate.net</a></td><td>Research networking</td></tr>
+<tr><td>Connected Papers</td><td><a href="https://www.connectedpapers.com/">connectedpapers.com</a></td><td>Research paper mapping</td></tr>
+<tr><td>Litmaps</td><td><a href="https://www.litmaps.com/">litmaps.com</a></td><td>Literature discovery</td></tr>
+<tr><td>Overleaf</td><td><a href="https://www.overleaf.com/">overleaf.com</a></td><td>Online LaTeX editor</td></tr>
+<tr><td>Grammarly</td><td><a href="https://www.grammarly.com/">grammarly.com</a></td><td>Writing assistance</td></tr>
+</table>
+
+<h2>6. Research Data and Scientific Computing</h2>
+<table>
+<tr><th>Website</th><th>URL</th><th>Resources</th></tr>
+<tr><td>GitHub</td><td><a href="https://github.com/">github.com</a></td><td>Code and research projects</td></tr>
+<tr><td>Google Colab</td><td><a href="https://colab.research.google.com/">colab.research.google.com</a></td><td>Python programming</td></tr>
+<tr><td>Wolfram Alpha</td><td><a href="https://www.wolframalpha.com/">wolframalpha.com</a></td><td>Mathematical computation</td></tr>
+<tr><td>MATLAB</td><td><a href="https://www.mathworks.com/">mathworks.com</a></td><td>Numerical computing</td></tr>
+<tr><td>Scilab</td><td><a href="https://www.scilab.org/">scilab.org</a></td><td>Open-source numerical computing</td></tr>
+<tr><td>Figshare</td><td><a href="https://figshare.com/">figshare.com</a></td><td>Research data sharing</td></tr>
+<tr><td>Dryad</td><td><a href="https://datadryad.org/">datadryad.org</a></td><td>Research datasets</td></tr>
+</table>
+
+<div class="footer">
+    Research Resources | Academic and Scientific Websites<br>
+    Prepared for Researchers, PhD Scholars and Academicians
+</div>
 
 </body>
 </html>
-
